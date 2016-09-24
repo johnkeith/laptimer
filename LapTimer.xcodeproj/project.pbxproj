@@ -1,0 +1,526 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		63E44BE11D9721710099E686 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E44BE01D9721710099E686 /* AppDelegate.swift */; };
+		63E44BE31D9721710099E686 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E44BE21D9721710099E686 /* ViewController.swift */; };
+		63E44BE61D9721710099E686 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63E44BE41D9721710099E686 /* Main.storyboard */; };
+		63E44BE81D9721710099E686 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63E44BE71D9721710099E686 /* Assets.xcassets */; };
+		63E44BEB1D9721710099E686 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63E44BE91D9721710099E686 /* LaunchScreen.storyboard */; };
+		63E44BF61D9721710099E686 /* LapTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E44BF51D9721710099E686 /* LapTimerTests.swift */; };
+		63E44C011D9721710099E686 /* LapTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E44C001D9721710099E686 /* LapTimerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		63E44BF21D9721710099E686 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63E44BD51D9721710099E686 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63E44BDC1D9721710099E686;
+			remoteInfo = LapTimer;
+		};
+		63E44BFD1D9721710099E686 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63E44BD51D9721710099E686 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63E44BDC1D9721710099E686;
+			remoteInfo = LapTimer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		63E44BDD1D9721710099E686 /* LapTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LapTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		63E44BE01D9721710099E686 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		63E44BE21D9721710099E686 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		63E44BE51D9721710099E686 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		63E44BE71D9721710099E686 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63E44BEA1D9721710099E686 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		63E44BEC1D9721710099E686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63E44BF11D9721710099E686 /* LapTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LapTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		63E44BF51D9721710099E686 /* LapTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapTimerTests.swift; sourceTree = "<group>"; };
+		63E44BF71D9721710099E686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63E44BFC1D9721710099E686 /* LapTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LapTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		63E44C001D9721710099E686 /* LapTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapTimerUITests.swift; sourceTree = "<group>"; };
+		63E44C021D9721710099E686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		63E44BDA1D9721710099E686 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63E44BEE1D9721710099E686 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63E44BF91D9721710099E686 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		63E44BD41D9721710099E686 = {
+			isa = PBXGroup;
+			children = (
+				63E44BDF1D9721710099E686 /* LapTimer */,
+				63E44BF41D9721710099E686 /* LapTimerTests */,
+				63E44BFF1D9721710099E686 /* LapTimerUITests */,
+				63E44BDE1D9721710099E686 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		63E44BDE1D9721710099E686 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				63E44BDD1D9721710099E686 /* LapTimer.app */,
+				63E44BF11D9721710099E686 /* LapTimerTests.xctest */,
+				63E44BFC1D9721710099E686 /* LapTimerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		63E44BDF1D9721710099E686 /* LapTimer */ = {
+			isa = PBXGroup;
+			children = (
+				63E44BE01D9721710099E686 /* AppDelegate.swift */,
+				63E44BE21D9721710099E686 /* ViewController.swift */,
+				63E44BE41D9721710099E686 /* Main.storyboard */,
+				63E44BE71D9721710099E686 /* Assets.xcassets */,
+				63E44BE91D9721710099E686 /* LaunchScreen.storyboard */,
+				63E44BEC1D9721710099E686 /* Info.plist */,
+			);
+			path = LapTimer;
+			sourceTree = "<group>";
+		};
+		63E44BF41D9721710099E686 /* LapTimerTests */ = {
+			isa = PBXGroup;
+			children = (
+				63E44BF51D9721710099E686 /* LapTimerTests.swift */,
+				63E44BF71D9721710099E686 /* Info.plist */,
+			);
+			path = LapTimerTests;
+			sourceTree = "<group>";
+		};
+		63E44BFF1D9721710099E686 /* LapTimerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				63E44C001D9721710099E686 /* LapTimerUITests.swift */,
+				63E44C021D9721710099E686 /* Info.plist */,
+			);
+			path = LapTimerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		63E44BDC1D9721710099E686 /* LapTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63E44C051D9721710099E686 /* Build configuration list for PBXNativeTarget "LapTimer" */;
+			buildPhases = (
+				63E44BD91D9721710099E686 /* Sources */,
+				63E44BDA1D9721710099E686 /* Frameworks */,
+				63E44BDB1D9721710099E686 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LapTimer;
+			productName = LapTimer;
+			productReference = 63E44BDD1D9721710099E686 /* LapTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		63E44BF01D9721710099E686 /* LapTimerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63E44C081D9721710099E686 /* Build configuration list for PBXNativeTarget "LapTimerTests" */;
+			buildPhases = (
+				63E44BED1D9721710099E686 /* Sources */,
+				63E44BEE1D9721710099E686 /* Frameworks */,
+				63E44BEF1D9721710099E686 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				63E44BF31D9721710099E686 /* PBXTargetDependency */,
+			);
+			name = LapTimerTests;
+			productName = LapTimerTests;
+			productReference = 63E44BF11D9721710099E686 /* LapTimerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		63E44BFB1D9721710099E686 /* LapTimerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63E44C0B1D9721710099E686 /* Build configuration list for PBXNativeTarget "LapTimerUITests" */;
+			buildPhases = (
+				63E44BF81D9721710099E686 /* Sources */,
+				63E44BF91D9721710099E686 /* Frameworks */,
+				63E44BFA1D9721710099E686 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				63E44BFE1D9721710099E686 /* PBXTargetDependency */,
+			);
+			name = LapTimerUITests;
+			productName = LapTimerUITests;
+			productReference = 63E44BFC1D9721710099E686 /* LapTimerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		63E44BD51D9721710099E686 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "John Keith";
+				TargetAttributes = {
+					63E44BDC1D9721710099E686 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+					63E44BF01D9721710099E686 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 63E44BDC1D9721710099E686;
+					};
+					63E44BFB1D9721710099E686 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 63E44BDC1D9721710099E686;
+					};
+				};
+			};
+			buildConfigurationList = 63E44BD81D9721710099E686 /* Build configuration list for PBXProject "LapTimer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 63E44BD41D9721710099E686;
+			productRefGroup = 63E44BDE1D9721710099E686 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				63E44BDC1D9721710099E686 /* LapTimer */,
+				63E44BF01D9721710099E686 /* LapTimerTests */,
+				63E44BFB1D9721710099E686 /* LapTimerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		63E44BDB1D9721710099E686 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63E44BEB1D9721710099E686 /* LaunchScreen.storyboard in Resources */,
+				63E44BE81D9721710099E686 /* Assets.xcassets in Resources */,
+				63E44BE61D9721710099E686 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63E44BEF1D9721710099E686 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63E44BFA1D9721710099E686 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		63E44BD91D9721710099E686 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63E44BE31D9721710099E686 /* ViewController.swift in Sources */,
+				63E44BE11D9721710099E686 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63E44BED1D9721710099E686 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63E44BF61D9721710099E686 /* LapTimerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63E44BF81D9721710099E686 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63E44C011D9721710099E686 /* LapTimerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		63E44BF31D9721710099E686 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63E44BDC1D9721710099E686 /* LapTimer */;
+			targetProxy = 63E44BF21D9721710099E686 /* PBXContainerItemProxy */;
+		};
+		63E44BFE1D9721710099E686 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63E44BDC1D9721710099E686 /* LapTimer */;
+			targetProxy = 63E44BFD1D9721710099E686 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		63E44BE41D9721710099E686 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63E44BE51D9721710099E686 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		63E44BE91D9721710099E686 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63E44BEA1D9721710099E686 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		63E44C031D9721710099E686 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		63E44C041D9721710099E686 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		63E44C061D9721710099E686 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LapTimer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = us.johnkeith.LapTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		63E44C071D9721710099E686 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LapTimer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = us.johnkeith.LapTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		63E44C091D9721710099E686 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LapTimerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = us.johnkeith.LapTimerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LapTimer.app/LapTimer";
+			};
+			name = Debug;
+		};
+		63E44C0A1D9721710099E686 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LapTimerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = us.johnkeith.LapTimerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LapTimer.app/LapTimer";
+			};
+			name = Release;
+		};
+		63E44C0C1D9721710099E686 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = LapTimerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = us.johnkeith.LapTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = LapTimer;
+			};
+			name = Debug;
+		};
+		63E44C0D1D9721710099E686 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = LapTimerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = us.johnkeith.LapTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = LapTimer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		63E44BD81D9721710099E686 /* Build configuration list for PBXProject "LapTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63E44C031D9721710099E686 /* Debug */,
+				63E44C041D9721710099E686 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63E44C051D9721710099E686 /* Build configuration list for PBXNativeTarget "LapTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63E44C061D9721710099E686 /* Debug */,
+				63E44C071D9721710099E686 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		63E44C081D9721710099E686 /* Build configuration list for PBXNativeTarget "LapTimerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63E44C091D9721710099E686 /* Debug */,
+				63E44C0A1D9721710099E686 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		63E44C0B1D9721710099E686 /* Build configuration list for PBXNativeTarget "LapTimerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63E44C0C1D9721710099E686 /* Debug */,
+				63E44C0D1D9721710099E686 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 63E44BD51D9721710099E686 /* Project object */;
+}
