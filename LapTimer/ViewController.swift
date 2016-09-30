@@ -31,10 +31,65 @@ class ViewController: UIViewController {
     @IBOutlet weak var lapCounterDisplay: UILabel!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var lapButton: UIButton!
+    @IBOutlet weak var pauseButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak var restartButton: UIButton!
     
     @IBAction func startTimer(_ sender: AnyObject) {
         timer.invalidate()
         
+        startTime = NSDate.timeIntervalSinceReferenceDate
+        startLapTime = NSDate.timeIntervalSinceReferenceDate
+        
+        initTimer()
+        
+        toggleStartButton()
+        toggleLapButton()
+        togglePauseButton()
+        print("start hit")
+    }
+    
+    @IBAction func pauseTimer(_ sender: AnyObject) {
+        timer.invalidate()
+        
+        toggleRestartButton()
+        toggleLapButton()
+        togglePauseButton()
+        toggleResetButton()
+        print("pause hit")
+    }
+    
+    @IBAction func resetTimer(_ sender: AnyObject) {
+        timerCounterDisplay.text = "00:00:00"
+        lapCounterDisplay.text = "00:00:00"
+        
+        toggleRestartButton()
+        toggleResetButton()
+        toggleStartButton()
+        print("reset hit")
+    }
+    
+    @IBAction func restartTimer(_ sender: AnyObject) {
+        initTimer()
+        
+        toggleRestartButton()
+        toggleResetButton()
+        togglePauseButton()
+        toggleLapButton()
+        print("restart hit")
+    }
+    
+    @IBAction func storeLap(_ sender: AnyObject) {
+        let finalLapTime = timerUpdate(initialTime: startLapTime)
+        
+        lapTimes.insert(finalLapTime, at: 0)
+
+        startLapTime = NSDate.timeIntervalSinceReferenceDate
+        
+        print("lap hit")
+    }
+    
+    func initTimer() {
         timer = Timer.scheduledTimer(
             timeInterval: 0.01,
             target: self,
@@ -42,21 +97,6 @@ class ViewController: UIViewController {
             userInfo: nil,
             repeats: true
         )
-        
-        showLapButton()
-    }
-    
-    @IBAction func stopTimer(_ sender: AnyObject) {
-        timer.invalidate()
-    }
-    
-    @IBAction func storeLap(_ sender: AnyObject) {
-        let finalLapTime = timerUpdate(initialTime: startLapTime)
-        
-        lapTimes.insert(finalLapTime, at: 0)
-        print(startTime, startLapTime)
-
-        startLapTime = NSDate.timeIntervalSinceReferenceDate
     }
     
     func updateMainTimer() {
@@ -95,8 +135,24 @@ class ViewController: UIViewController {
         return "\(strMinutes):\(strSeconds):\(strFraction)"
     }
     
-    func showLapButton() {
-        lapButton.isHidden = false
+    func toggleLapButton() {
+        lapButton.isHidden = !lapButton.isHidden
+    }
+    
+    func togglePauseButton() {
+        pauseButton.isHidden = !pauseButton.isHidden
+    }
+    
+    func toggleStartButton() {
+        startButton.isHidden = !startButton.isHidden
+    }
+    
+    func toggleResetButton() {
+        resetButton.isHidden = !resetButton.isHidden
+    }
+    
+    func toggleRestartButton() {
+        restartButton.isHidden = !restartButton.isHidden
     }
 }
 
