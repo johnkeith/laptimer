@@ -84,30 +84,52 @@ class ViewController: UIViewController {
     
     @IBAction func storeLap(_ sender: AnyObject) {
         let results = timerUpdate(initialTime: startLapTime)
-        let lapTimeToSpeak = convertLapTimeToText(timeString: results.text)
+        let lapTimeToSpeak = convertLapTimeToText(timeString: results.text, sentancePrefix: "Your lap time was")
         
         textToSpeech(text: lapTimeToSpeak)
         
         lapTimes.insert(results, at: 0)
 
+        if lapTimes.count > 1 {
+            let averageLapTime = calculateAverageLapTime(_lapTimes: lapTimes)
+            let averageLapTimeAsString = timeElapsedAsString(inputTime: averageLapTime)
+            let averageLapTimeToSpeak = convertLapTimeToText(timeString: averageLapTimeAsString, sentancePrefix: "Your average lap time is")
+        }
+        
+        textToSpeech(text: averageLapTimeToSpeak)
+        
         startLapTime = NSDate.timeIntervalSinceReferenceDate
         
         print("lap hit")
     }
     
-    func convertLapTimeToText(timeString: String) -> String {
+    func convertLapTimeToText(timeString: String, sentancePrefix: String) -> String {
         let splitTimeString = timeString.components(separatedBy: ":")
+        let minutes = splitTimeString[0]
+        let seconds = splitTimeString[1]
+        let minutesInt = Int(minutes)
+        let secondsInt = Int(seconds)
         
-        print(splitTimeString)
+        var convertedString = sentancePrefix
         
-        var convertedString = "Your lap time was"
-        
-        if splitTimeString[0] != "00" {
-            convertedString += "\(splitTimeString[0]) minutes and"
+        if minutesInt! > 0 {
+            convertedString += " \(minutes) minute"
         }
         
-        if splitTimeString[1] != "00" {
-            convertedString += " \(splitTimeString[1]) seconds"
+        if minutesInt! > 1 {
+            convertedString += "s"
+        }
+        
+        if minutesInt! > 0 && secondsInt! > 0 {
+            convertedString += " and"
+        }
+        
+        if secondsInt! > 0 {
+            convertedString += " \(seconds) second"
+        }
+        
+        if secondsInt! > 1 {
+            convertedString += "s"
         }
         
         return convertedString
@@ -147,10 +169,20 @@ class ViewController: UIViewController {
     
     func timerUpdate(initialTime: Double) -> (text: String, time: Double) {
         let currentTime = NSDate.timeIntervalSinceReferenceDate
+        let elapsedTime: TimeInterval = currentTime - initialTime
+        let text = timeElapsedAsString(inputTime: elapsedTime)
         
-        var elapsedTime: TimeInterval = currentTime - initialTime
-        let elapsedTimeReturn = elapsedTime
-
+        return (text: text, time: elapsedTime)
+    }
+    
+    func timeElapsedAsString(inputTime: Double) -> String {
+        let (strMinutes, strSeconds, strFraction) = timeElapsedAsStrings(inputTime: inputTime)
+        return timeDisplayString(times: [strMinutes, strSeconds, strFraction])
+    }
+    
+    func timeElapsedAsStrings(inputTime: Double) -> (minutes: String, seconds: String, fraction: String) {
+        var elapsedTime = inputTime
+        
         let minutes = UInt8(elapsedTime / 60.0)
         
         elapsedTime -= (TimeInterval(minutes) * 60)
@@ -165,7 +197,16 @@ class ViewController: UIViewController {
         let strSeconds = String(format: "%02d", seconds)
         let strFraction = String(format: "%02d", fraction)
         
-        return (text: "\(strMinutes):\(strSeconds):\(strFraction)", time: elapsedTimeReturn)
+        return (minutes: strMinutes, seconds: strSeconds, fraction: strFraction)
+    }
+    
+    func timeDisplayString(times: [String]) -> String {
+        return times.joined(separator: ":")
+    }
+    
+    func calculateAverageLapTime(_lapTimes: [(text: String, time: Double)]) -> Double {
+        let totalLapTime = _lapTimes.map{$0.time}.reduce(0, +)
+        return totalLapTime / Double(_lapTimes.count)
     }
     
     func toggleLapButton() {
