@@ -84,6 +84,9 @@ class ViewController: UIViewController {
     
     @IBAction func storeLap(_ sender: AnyObject) {
         let results = timerUpdate(initialTime: startLapTime)
+        let lapTimeToSpeak = convertLapTimeToText(timeString: results.text)
+        
+        textToSpeech(text: lapTimeToSpeak)
         
         lapTimes.insert(results, at: 0)
 
@@ -92,14 +95,28 @@ class ViewController: UIViewController {
         print("lap hit")
     }
     
-    func convertTimeToText(timeString: String) -> String {
-        return "Working on it dude"
+    func convertLapTimeToText(timeString: String) -> String {
+        let splitTimeString = timeString.components(separatedBy: ":")
+        
+        print(splitTimeString)
+        
+        var convertedString = "Your lap time was"
+        
+        if splitTimeString[0] != "00" {
+            convertedString += "\(splitTimeString[0]) minutes and"
+        }
+        
+        if splitTimeString[1] != "00" {
+            convertedString += " \(splitTimeString[1]) seconds"
+        }
+        
+        return convertedString
     }
     
     func textToSpeech(text: String) {
         let myUtterance = AVSpeechUtterance(string: text)
         
-        myUtterance.rate = 0.3
+        myUtterance.rate = 0.5
         
         synth.speak(myUtterance)
     }
