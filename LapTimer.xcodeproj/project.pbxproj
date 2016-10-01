@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		635A69DC1D9E866D00C7FD36 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635A69DB1D9E866D00C7FD36 /* AVFoundation.framework */; };
 		63E44BE11D9721710099E686 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E44BE01D9721710099E686 /* AppDelegate.swift */; };
 		63E44BE31D9721710099E686 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E44BE21D9721710099E686 /* ViewController.swift */; };
 		63E44BE61D9721710099E686 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63E44BE41D9721710099E686 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		635A69DB1D9E866D00C7FD36 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		63E44BDD1D9721710099E686 /* LapTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LapTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E44BE01D9721710099E686 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63E44BE21D9721710099E686 /* ViewController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				635A69DC1D9E866D00C7FD36 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		635A69DA1D9E866D00C7FD36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				635A69DB1D9E866D00C7FD36 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		63E44BD41D9721710099E686 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +92,7 @@
 				63E44BF41D9721710099E686 /* LapTimerTests */,
 				63E44BFF1D9721710099E686 /* LapTimerUITests */,
 				63E44BDE1D9721710099E686 /* Products */,
+				635A69DA1D9E866D00C7FD36 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -503,6 +515,7 @@
 				63E44C071D9721710099E686 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		63E44C081D9721710099E686 /* Build configuration list for PBXNativeTarget "LapTimerTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +524,7 @@
 				63E44C0A1D9721710099E686 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		63E44C0B1D9721710099E686 /* Build configuration list for PBXNativeTarget "LapTimerUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +533,7 @@
 				63E44C0D1D9721710099E686 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

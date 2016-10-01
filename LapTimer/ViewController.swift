@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
+    let synth = AVSpeechSynthesizer()
+    
     var timerCounter = "00:00:00"
     var lapCounter = "00:00:00"
     var timer = Timer()
     var startTime = NSDate.timeIntervalSinceReferenceDate
     var startLapTime = NSDate.timeIntervalSinceReferenceDate
-    var lapTimes = [String]()
+    var lapTimes = [(text: String, time: Double)]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,13 +83,25 @@ class ViewController: UIViewController {
     }
     
     @IBAction func storeLap(_ sender: AnyObject) {
-        let finalLapTime = timerUpdate(initialTime: startLapTime)
+        let results = timerUpdate(initialTime: startLapTime)
         
-        lapTimes.insert(finalLapTime, at: 0)
+        lapTimes.insert(results, at: 0)
 
         startLapTime = NSDate.timeIntervalSinceReferenceDate
         
         print("lap hit")
+    }
+    
+    func convertTimeToText(timeString: String) -> String {
+        return "Working on it dude"
+    }
+    
+    func textToSpeech(text: String) {
+        let myUtterance = AVSpeechUtterance(string: text)
+        
+        myUtterance.rate = 0.3
+        
+        synth.speak(myUtterance)
     }
     
     func initTimer() {
@@ -100,24 +115,25 @@ class ViewController: UIViewController {
     }
     
     func updateMainTimer() {
-        let timerCounterDisplayText = timerUpdate(initialTime: startTime)
+        let results = timerUpdate(initialTime: startTime)
 
-        timerCounterDisplay.text = timerCounterDisplayText
+        timerCounterDisplay.text = results.text
         
         updateLapTimer()
     }
     
     func updateLapTimer() {
-        let lapCounterDisplayText = timerUpdate(initialTime: startLapTime)
+        let results = timerUpdate(initialTime: startLapTime)
         
-        lapCounterDisplay.text = lapCounterDisplayText
+        lapCounterDisplay.text = results.text
     }
     
-    func timerUpdate(initialTime: Double) -> String {
+    func timerUpdate(initialTime: Double) -> (text: String, time: Double) {
         let currentTime = NSDate.timeIntervalSinceReferenceDate
         
         var elapsedTime: TimeInterval = currentTime - initialTime
-        
+        let elapsedTimeReturn = elapsedTime
+
         let minutes = UInt8(elapsedTime / 60.0)
         
         elapsedTime -= (TimeInterval(minutes) * 60)
@@ -132,7 +148,7 @@ class ViewController: UIViewController {
         let strSeconds = String(format: "%02d", seconds)
         let strFraction = String(format: "%02d", fraction)
         
-        return "\(strMinutes):\(strSeconds):\(strFraction)"
+        return (text: "\(strMinutes):\(strSeconds):\(strFraction)", time: elapsedTimeReturn)
     }
     
     func toggleLapButton() {
