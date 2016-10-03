@@ -94,9 +94,9 @@ class ViewController: UIViewController {
             let averageLapTime = calculateAverageLapTime(_lapTimes: lapTimes)
             let averageLapTimeAsString = timeElapsedAsString(inputTime: averageLapTime)
             let averageLapTimeToSpeak = convertLapTimeToText(timeString: averageLapTimeAsString, sentancePrefix: "Your average lap time is")
+            textToSpeech(text: averageLapTimeToSpeak)
         }
         
-        textToSpeech(text: averageLapTimeToSpeak)
         
         startLapTime = NSDate.timeIntervalSinceReferenceDate
         
