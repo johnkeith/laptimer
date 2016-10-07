@@ -9,8 +9,9 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AVSpeechSynthesizerDelegate {
     let synth = AVSpeechSynthesizer()
+//    let audioSession = AVAudioSession.sharedInstance()
     
     var timerCounter = "00:00:00"
     var lapCounter = "00:00:00"
@@ -21,6 +22,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        synth.delegate = self
+        
         timerCounterDisplay.text = timerCounter
         lapCounterDisplay.text = lapCounter
     }
@@ -84,7 +88,8 @@ class ViewController: UIViewController {
     
     @IBAction func storeLap(_ sender: AnyObject) {
         let results = timerUpdate(initialTime: startLapTime)
-        let lapTimeToSpeak = convertLapTimeToText(timeString: results.text, sentancePrefix: "Your lap time was")
+        let sentancePrefix = "\(lapTimes.count + 1)\(ordinalSuffixForNumber(number: lapTimes.count + 1)) lap time was"
+        let lapTimeToSpeak = convertLapTimeToText(timeString: results.text, sentancePrefix: sentancePrefix)
         
         textToSpeech(text: lapTimeToSpeak)
         
@@ -136,11 +141,17 @@ class ViewController: UIViewController {
     }
     
     func textToSpeech(text: String) {
+        activateAudio()
+        
         let myUtterance = AVSpeechUtterance(string: text)
         
         myUtterance.rate = 0.5
         
         synth.speak(myUtterance)
+    }
+    
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        deactivateAudio()
     }
     
     func initTimer() {
@@ -228,5 +239,50 @@ class ViewController: UIViewController {
     func toggleRestartButton() {
         restartButton.isHidden = !restartButton.isHidden
     }
+    
+    func ordinalSuffixForNumber(number: Int) -> String {
+        switch (number) {
+        case 1:
+            return "st"
+        case 2:
+            return "nd"
+        case 3:
+            return "rd"
+        default:
+            return "th"
+        }
+    }
+    
+    func activateAudio() {
+        DispatchQueue.global(qos: .background).async {
+            do {
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: AVAudioSessionCategoryOptions.duckOthers)
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: AVAudioSessionCategoryOptions.duckOthers)
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: AVAudioSessionCategoryOptions.interruptSpokenAudioAndMixWithOthers)
+                print("set audio options")
+                try AVAudioSession.sharedInstance().setActive(true)
+                print("set audio active")
+            } catch {
+                print("there was an error activating audio")
+            }
+        }
+    }
+    
+    func deactivateAudio() {
+        DispatchQueue.global(qos: .background).async {
+            do {
+              try AVAudioSession.sharedInstance().setActive(false)
+                print("set audit session inactive")
+            } catch {
+                print("there was an error deactivating audio")
+            }
+        }
+    }
+    
+//    func setAudioPlaybackToContinue() {
+//        do {
+//            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: AVAudioSessionCategoryOptions.duckOthers)
+//        } catch {}
+//    }
 }
 
