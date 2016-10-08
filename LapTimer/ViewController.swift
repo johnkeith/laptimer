@@ -11,7 +11,6 @@ import AVFoundation
 
 class ViewController: UIViewController, AVSpeechSynthesizerDelegate {
     let synth = AVSpeechSynthesizer()
-//    let audioSession = AVAudioSession.sharedInstance()
     
     var timerCounter = "00:00:00"
     var lapCounter = "00:00:00"
@@ -24,6 +23,7 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate {
         super.viewDidLoad()
 
         synth.delegate = self
+        setAudioDefaults()
         
         timerCounterDisplay.text = timerCounter
         lapCounterDisplay.text = lapCounter
@@ -70,6 +70,8 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate {
         timerCounterDisplay.text = "00:00:00"
         lapCounterDisplay.text = "00:00:00"
         
+        lapTimes.removeAll()
+        
         toggleRestartButton()
         toggleResetButton()
         toggleStartButton()
@@ -89,9 +91,7 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate {
     @IBAction func storeLap(_ sender: AnyObject) {
         let results = timerUpdate(initialTime: startLapTime)
         let sentancePrefix = "\(lapTimes.count + 1)\(ordinalSuffixForNumber(number: lapTimes.count + 1)) lap time was"
-        let lapTimeToSpeak = convertLapTimeToText(timeString: results.text, sentancePrefix: sentancePrefix)
-        
-        textToSpeech(text: lapTimeToSpeak)
+        var lapTimeToSpeak = convertLapTimeToText(timeString: results.text, sentancePrefix: sentancePrefix)
         
         lapTimes.insert(results, at: 0)
 
@@ -99,9 +99,10 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate {
             let averageLapTime = calculateAverageLapTime(_lapTimes: lapTimes)
             let averageLapTimeAsString = timeElapsedAsString(inputTime: averageLapTime)
             let averageLapTimeToSpeak = convertLapTimeToText(timeString: averageLapTimeAsString, sentancePrefix: "Your average lap time is")
-            textToSpeech(text: averageLapTimeToSpeak)
+            lapTimeToSpeak += averageLapTimeToSpeak
         }
         
+        textToSpeech(text: lapTimeToSpeak)
         
         startLapTime = NSDate.timeIntervalSinceReferenceDate
         
@@ -141,13 +142,10 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate {
     }
     
     func textToSpeech(text: String) {
-        activateAudio()
-        
         let myUtterance = AVSpeechUtterance(string: text)
-        
         myUtterance.rate = 0.5
-        
-        synth.speak(myUtterance)
+
+        activateAudioAndSpeak(utterance: myUtterance)
     }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
@@ -253,15 +251,20 @@ class ViewController: UIViewController, AVSpeechSynthesizerDelegate {
         }
     }
     
-    func activateAudio() {
+    func setAudioDefaults() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: [AVAudioSessionCategoryOptions.duckOthers, AVAudioSessionCategoryOptions.interruptSpokenAudioAndMixWithOthers])
+        } catch {
+            print("there was an error setting audio defaults")
+        }
+    }
+    
+    func activateAudioAndSpeak(utterance: AVSpeechUtterance) {
         DispatchQueue.global(qos: .background).async {
             do {
-                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: AVAudioSessionCategoryOptions.duckOthers)
-                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: AVAudioSessionCategoryOptions.duckOthers)
-                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: AVAudioSessionCategoryOptions.interruptSpokenAudioAndMixWithOthers)
-                print("set audio options")
                 try AVAudioSession.sharedInstance().setActive(true)
                 print("set audio active")
+                self.synth.speak(utterance)
             } catch {
                 print("there was an error activating audio")
             }
