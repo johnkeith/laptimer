@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController, AVSpeechSynthesizerDelegate {
+class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     let synth = AVSpeechSynthesizer()
     
     var timerCounter = "00:00:00"

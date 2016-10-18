@@ -9,16 +9,17 @@
         <!--mainTabBarCtrl-->
         <scene sceneID="ZJA-vH-gQG">
             <objects>
-                <tabBarController title="mainTabBarCtrl" id="XAN-bA-9EC" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="UITabBarController" title="mainTabBarCtrl" id="XAN-bA-9EC" customClass="MainTabBarController" customModule="LapTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Bo9-KG-EKM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="VId-G2-IPG" kind="relationship" relationship="viewControllers" id="b0v-yt-3cO"/>
-                        <segue destination="O0y-Ya-fVz" kind="relationship" relationship="viewControllers" id="Myj-Rj-2s6"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="taU-IF-mJv"/>
+                        <segue destination="O0y-Ya-fVz" kind="relationship" relationship="viewControllers" id="Myj-Rj-2s6"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sPg-pa-XtY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -47,7 +48,7 @@
         <!--Timer-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Timer" id="BYZ-38-t0r" customClass="ViewController" customModule="LapTimer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Timer" id="BYZ-38-t0r" customClass="TimerViewController" customModule="LapTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
