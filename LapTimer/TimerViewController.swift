@@ -19,6 +19,10 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     var startLapTime = NSDate.timeIntervalSinceReferenceDate
     var lapTimes = [(text: String, time: Double)]()
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
