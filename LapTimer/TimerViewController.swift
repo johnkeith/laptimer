@@ -10,6 +10,8 @@ import UIKit
 import AVFoundation
 
 class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
+    let screenSize: CGRect = UIScreen.main.bounds
+    
     let synth = AVSpeechSynthesizer()
     
     var timerCounter = "00:00:00"
@@ -40,14 +42,20 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-         let startButtonWidth = startButton.frame.size.width
-        let startButtonPadding: CGFloat = 20.0
-         startButton.layer.cornerRadius = startButtonWidth / 2.0
-         startButton.contentEdgeInsets = UIEdgeInsets(
-            top:startButtonPadding,
-            left:startButtonPadding,
-            bottom:startButtonPadding,
-            right:startButtonPadding)
+        // need to do with Autolayout!
+            let startButtonWidth = startButton.frame.size.width
+//            let startButtonPadding: CGFloat = screenSize.width * 0.15
+//            print(startButtonPadding)
+            startButton.layer.cornerRadius = startButtonWidth / 2.0
+//            startButton.frame.size.height = startButtonWidth
+//        let startButtonHeightConstraint = NSLayoutConstraint(item: startButton, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: startButtonWidth, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 100)
+//        NSLayoutConstraint.activate([startButtonHeightConstraint])
+//            print(startButton.frame.size.height, startButton.frame.size.width)
+//            startButton.contentEdgeInsets = UIEdgeInsets(
+//                top:startButtonPadding,
+//                left:startButtonPadding,
+//                bottom:startButtonPadding,
+//                right:startButtonPadding)
     }
 
     @IBOutlet weak var timerCounterDisplay: UILabel!
@@ -190,6 +198,7 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         let results = timerUpdate(initialTime: startLapTime)
         
         lapCounterDisplay.text = results.text
+//        startButton.setTitle(results.text, for: .normal)
     }
     
     func timerUpdate(initialTime: Double) -> (text: String, time: Double) {

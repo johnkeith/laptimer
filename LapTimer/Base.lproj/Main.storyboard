@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -35,7 +36,7 @@
                         <viewControllerLayoutGuide type="bottom" id="bsE-k1-71q"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GeG-ML-HKG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -54,11 +55,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJh-fQ-2nc">
-                                <frame key="frameInset" minX="6.00%" minY="50.09%" width="100" height="100"/>
+                                <frame key="frameInset" minX="5.89%" minY="50.24%" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -74,7 +75,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nH-hY-zwO">
-                                <frame key="frameInset" minX="6.00%" minY="50.09%" width="100" height="100"/>
+                                <frame key="frameInset" minX="5.89%" minY="50.24%" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -97,7 +98,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZK-YU-zeS">
-                                <frame key="frameInset" minX="93.82%" minY="50.09%" width="100" height="100"/>
+                                <frame key="frameInset" minX="94.11%" minY="50.24%" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -121,7 +122,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIQ-Xs-Dbt">
-                                <frame key="frameInset" minX="93.82%" minY="50.09%" width="100" height="100"/>
+                                <frame key="frameInset" minX="94.11%" minY="50.24%" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -136,10 +137,11 @@
                                     <action selector="resetTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gFz-8q-PrW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtw-cd-kdx">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtw-cd-kdx">
+                                <frame key="frameInset" minX="49.77%" minY="50.19%" width="200" height="200"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="qtw-cd-kdx" secondAttribute="height" multiplier="1:1" id="b6x-X9-GCA"/>
+                                    <constraint firstAttribute="width" secondItem="qtw-cd-kdx" secondAttribute="height" multiplier="1:1" id="m5C-BK-jWR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="58"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -153,8 +155,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.16048419480000001" green="0.16372162100000001" blue="0.2134657502" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="qtw-cd-kdx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eID-0h-lu3"/>
-                            <constraint firstItem="qtw-cd-kdx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eMc-bi-12z"/>
+                            <constraint firstItem="qtw-cd-kdx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8mx-k9-9LU"/>
+                            <constraint firstItem="qtw-cd-kdx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="JV4-eg-Img"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qtw-cd-kdx" secondAttribute="trailing" constant="10" id="zU1-II-1aG"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Timer" id="ETJ-KB-zij"/>
@@ -170,7 +173,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="290.625" y="144.71830985915494"/>
+            <point key="canvasLocation" x="288.75" y="143.66197183098592"/>
         </scene>
         <!--Settings-->
         <scene sceneID="AwV-VW-WjO">
@@ -181,7 +184,7 @@
                         <viewControllerLayoutGuide type="bottom" id="JWy-WY-dBH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MwC-ls-Tie">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
