@@ -37,6 +37,18 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+         let startButtonWidth = startButton.frame.size.width
+        let startButtonPadding: CGFloat = 20.0
+         startButton.layer.cornerRadius = startButtonWidth / 2.0
+         startButton.contentEdgeInsets = UIEdgeInsets(
+            top:startButtonPadding,
+            left:startButtonPadding,
+            bottom:startButtonPadding,
+            right:startButtonPadding)
+    }
 
     @IBOutlet weak var timerCounterDisplay: UILabel!
     @IBOutlet weak var lapCounterDisplay: UILabel!
