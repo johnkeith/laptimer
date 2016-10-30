@@ -32,7 +32,7 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         setAudioDefaults()
         
         timerCounterDisplay.text = timerCounter
-        lapCounterDisplay.text = lapCounter
+        lapTimerDisplay.text = lapCounter
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,24 +42,18 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        // need to do with Autolayout!
+            // VIEW CUSTOMIZATION
             let startButtonWidth = startButton.frame.size.width
-//            let startButtonPadding: CGFloat = screenSize.width * 0.15
-//            print(startButtonPadding)
             startButton.layer.cornerRadius = startButtonWidth / 2.0
-//            startButton.frame.size.height = startButtonWidth
-//        let startButtonHeightConstraint = NSLayoutConstraint(item: startButton, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: startButtonWidth, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 100)
-//        NSLayoutConstraint.activate([startButtonHeightConstraint])
-//            print(startButton.frame.size.height, startButton.frame.size.width)
-//            startButton.contentEdgeInsets = UIEdgeInsets(
-//                top:startButtonPadding,
-//                left:startButtonPadding,
-//                bottom:startButtonPadding,
-//                right:startButtonPadding)
+            startButton.layer.borderWidth = 3.0
+            startButton.layer.borderColor = UIColor.white.cgColor
+        
+            let lapButtonFont = UIFont.monospacedDigitSystemFont(ofSize: 48, weight: UIFontWeightLight)
+            lapTimerDisplay.font = lapButtonFont
     }
 
     @IBOutlet weak var timerCounterDisplay: UILabel!
-    @IBOutlet weak var lapCounterDisplay: UILabel!
+    @IBOutlet weak var lapTimerDisplay: UILabel!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var lapButton: UIButton!
     @IBOutlet weak var pauseButton: UIButton!
@@ -74,10 +68,24 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         
         initTimer()
         
-        toggleStartButton()
-        toggleLapButton()
-        togglePauseButton()
+//        toggleStartButton()
+        clearStartButtonTitle()
+        animateStartButtonTransition()
+        
+        lapTimerDisplay.isHidden = false
+//        toggleLapButton()
+//        togglePauseButton()
         print("start hit")
+    }
+    
+    func clearStartButtonTitle() {
+        startButton.setTitle("", for: .normal)
+    }
+    
+    func animateStartButtonTransition() {
+        UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions.allowUserInteraction, animations: { () -> Void in
+            self.startButton.backgroundColor = UIColor.white;
+        })
     }
     
     @IBAction func pauseTimer(_ sender: AnyObject) {
@@ -92,13 +100,13 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     
     @IBAction func resetTimer(_ sender: AnyObject) {
         timerCounterDisplay.text = "00:00:00"
-        lapCounterDisplay.text = "00:00:00"
+        lapTimerDisplay.text = "00:00:00"
         
         lapTimes.removeAll()
         
         toggleRestartButton()
         toggleResetButton()
-        toggleStartButton()
+//        toggleStartButton()
         print("reset hit")
     }
     
@@ -197,8 +205,7 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     func updateLapTimer() {
         let results = timerUpdate(initialTime: startLapTime)
         
-        lapCounterDisplay.text = results.text
-//        startButton.setTitle(results.text, for: .normal)
+        lapTimerDisplay.text = results.text
     }
     
     func timerUpdate(initialTime: Double) -> (text: String, time: Double) {
