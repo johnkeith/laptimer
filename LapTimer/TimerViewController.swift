@@ -50,6 +50,7 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         
             let lapButtonFont = UIFont.monospacedDigitSystemFont(ofSize: 48, weight: UIFontWeightLight)
             lapTimerDisplay.font = lapButtonFont
+            timerCounterDisplay.font = lapButtonFont
     }
 
     @IBOutlet weak var timerCounterDisplay: UILabel!
@@ -59,7 +60,8 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var restartButton: UIButton!
-    
+    @IBOutlet weak var totalTimeLabel: UILabel!
+   
     @IBAction func startTimer(_ sender: AnyObject) {
         timer.invalidate()
         
@@ -73,6 +75,9 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         animateStartButtonTransition()
         
         lapTimerDisplay.isHidden = false
+        timerCounterDisplay.isHidden = false
+        totalTimeLabel.isHidden = false
+        
 //        toggleLapButton()
 //        togglePauseButton()
         print("start hit")
