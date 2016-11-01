@@ -1,32 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XAN-bA-9EC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--mainTabBarCtrl-->
-        <scene sceneID="ZJA-vH-gQG">
-            <objects>
-                <tabBarController storyboardIdentifier="UITabBarController" title="mainTabBarCtrl" id="XAN-bA-9EC" customClass="MainTabBarController" customModule="LapTimer" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="Bo9-KG-EKM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="VId-G2-IPG" kind="relationship" relationship="viewControllers" id="b0v-yt-3cO"/>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="taU-IF-mJv"/>
-                        <segue destination="O0y-Ya-fVz" kind="relationship" relationship="viewControllers" id="Myj-Rj-2s6"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sPg-pa-XtY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="292" y="-695"/>
-        </scene>
         <!--Stats-->
         <scene sceneID="kuN-Ke-0B5">
             <objects>
@@ -55,11 +35,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJh-fQ-2nc">
-                                <frame key="frameInset" minX="6.19%" minY="50.05%" width="100.5" height="99.5"/>
+                                <frame key="frameInset" minX="5.83%" minY="50.04%" width="100.5" height="99.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -74,24 +54,8 @@
                                     <action selector="restartTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zVK-e2-fQr"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nH-hY-zwO">
-                                <frame key="frameInset" minX="6.19%" minY="50.05%" width="100.5" height="99.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Pause"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="50"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="pauseTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zOI-ey-FEh"/>
-                                </connections>
-                            </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZK-YU-zeS">
-                                <frame key="frameInset" minX="93.81%" minY="50.05%" width="100.5" height="99.5"/>
+                                <frame key="frameInset" minX="93.81%" minY="50.04%" width="100.5" height="99.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -107,7 +71,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIQ-Xs-Dbt">
-                                <frame key="frameInset" minX="93.81%" minY="50.05%" width="100.5" height="99.5"/>
+                                <frame key="frameInset" minX="93.81%" minY="50.04%" width="100.5" height="99.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -123,25 +87,19 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtw-cd-kdx">
-                                <frame key="frameInset" minX="49.86%" minY="50.00%" width="200.5" height="201"/>
+                                <frame key="frameInset" minX="87" minY="209" width="200.5" height="201"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qtw-cd-kdx" secondAttribute="height" multiplier="1:1" id="m5C-BK-jWR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="58"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Start">
+                                <state key="normal" title="START">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="startTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P8B-HD-pxo"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lap Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmj-Cm-bNm">
-                                <frame key="frameInset" minX="134" minY="274" width="152" height="37"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <color key="textColor" red="0.16048419480000001" green="0.16372162100000001" blue="0.2134657502" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMK-sr-7dz">
                                 <frame key="frameInset" minX="16" minY="20" width="138" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -149,22 +107,45 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Run Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPH-yd-baX">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Run Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPH-yd-baX">
                                 <frame key="frameInset" minX="162" minY="20" width="196" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="46"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nH-hY-zwO">
+                                <frame key="frameInset" minX="97" minY="194" width="181" height="40"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4nH-hY-zwO" secondAttribute="height" multiplier="180:180" id="YqK-8O-CtE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Pause">
+                                    <color key="titleColor" red="0.25098040700000002" green="0.25490197539999998" blue="0.2588235438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pauseTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zOI-ey-FEh"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lap Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmj-Cm-bNm">
+                                <frame key="frameInset" minX="111" minY="502" width="152" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" red="0.16048419480000001" green="0.16372162100000001" blue="0.2134657502" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.16048419480000001" green="0.16372162100000001" blue="0.2134657502" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.2784313725" green="0.6588235294" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="qtw-cd-kdx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8mx-k9-9LU"/>
-                            <constraint firstItem="mmj-Cm-bNm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ARB-8Z-WSh"/>
-                            <constraint firstItem="mmj-Cm-bNm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BR6-mI-gb0"/>
-                            <constraint firstItem="qtw-cd-kdx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="JV4-eg-Img"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="DPH-yd-baX" secondAttribute="trailing" constant="10" id="frz-sK-qpL"/>
-                            <constraint firstItem="DPH-yd-baX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="rXO-vu-WwK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="qtw-cd-kdx" secondAttribute="trailing" constant="10" id="zU1-II-1aG"/>
+                            <constraint firstItem="qtw-cd-kdx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GML-5X-4Ft"/>
+                            <constraint firstItem="qtw-cd-kdx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pph-5l-F8T"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
@@ -182,7 +163,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="287.19999999999999" y="143.47826086956522"/>
+            <point key="canvasLocation" x="282" y="144"/>
         </scene>
         <!--Settings-->
         <scene sceneID="AwV-VW-WjO">

@@ -43,10 +43,10 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
             // VIEW CUSTOMIZATION
-            let startButtonWidth = startButton.frame.size.width
-            startButton.layer.cornerRadius = startButtonWidth / 2.0
-            startButton.layer.borderWidth = 3.0
-            startButton.layer.borderColor = UIColor.white.cgColor
+//            let startButtonWidth = startButton.frame.size.width
+//            startButton.layer.cornerRadius = startButtonWidth / 2.0
+//            startButton.layer.borderWidth = 3.0
+//            startButton.layer.borderColor = UIColor.white.cgColor
         
             let lapButtonFont = UIFont.monospacedDigitSystemFont(ofSize: 48, weight: UIFontWeightLight)
             lapTimerDisplay.font = lapButtonFont
@@ -75,11 +75,11 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         animateStartButtonTransition()
         
         lapTimerDisplay.isHidden = false
-        timerCounterDisplay.isHidden = false
-        totalTimeLabel.isHidden = false
+//        timerCounterDisplay.isHidden = false
+//        totalTimeLabel.isHidden = false
         
 //        toggleLapButton()
-//        togglePauseButton()
+        togglePauseButton()
         print("start hit")
     }
     
