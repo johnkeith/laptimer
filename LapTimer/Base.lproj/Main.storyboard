@@ -4,6 +4,8 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -39,7 +41,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJh-fQ-2nc">
-                                <frame key="frameInset" minX="5.83%" minY="50.04%" width="100.5" height="99.5"/>
+                                <frame key="frameInset" minX="5.83%" minY="49.96%" width="100.5" height="99.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -55,7 +57,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZK-YU-zeS">
-                                <frame key="frameInset" minX="93.81%" minY="50.04%" width="100.5" height="99.5"/>
+                                <frame key="frameInset" minX="93.81%" minY="49.96%" width="100.5" height="99.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -71,7 +73,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIQ-Xs-Dbt">
-                                <frame key="frameInset" minX="93.81%" minY="50.04%" width="100.5" height="99.5"/>
+                                <frame key="frameInset" minX="93.81%" minY="49.96%" width="100.5" height="99.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -107,27 +109,6 @@
                                 <color key="textColor" red="0.16048419480000001" green="0.16372162100000001" blue="0.2134657502" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Zz-tb-bjB">
-                                <frame key="frameInset" minX="31" minY="20" width="293" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMK-sr-7dz">
-                                        <frame key="frameInset" width="141" height="45"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Run Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPH-yd-baX">
-                                        <frame key="frameInset" minY="34" width="343" height="61"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="46"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nH-hY-zwO">
                                 <frame key="frameInset" minX="97" minY="409" width="181" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -146,11 +127,57 @@
                                     <action selector="pauseTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zOI-ey-FEh"/>
                                 </connections>
                             </button>
+                            <view opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lgR-4f-dIZ">
+                                <frame key="frameInset" minX="31" minY="100" width="293" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Run Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPH-yd-baX">
+                                <frame key="frameInset" minX="15" minY="554" width="343" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="46"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMK-sr-7dz">
+                                <frame key="frameInset" minX="24" minY="547" width="141" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aJY-te-XDc">
+                                <frame key="frameInset" minX="31" minY="162" width="293" height="39"/>
+                                <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uhr-xv-oGD">
+                                <frame key="frameInset" minX="31" minY="221" width="310" height="47"/>
+                                <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view opaque="NO" contentMode="top" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Zz-tb-bjB">
+                                <frame key="frameInset" minX="31" minY="20" width="293" height="65"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.058823529409999999" green="0.63921568630000003" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Uhr-xv-oGD" firstAttribute="top" secondItem="aJY-te-XDc" secondAttribute="bottom" constant="15" id="0bf-Xp-VAC"/>
+                            <constraint firstItem="lgR-4f-dIZ" firstAttribute="top" secondItem="1Zz-tb-bjB" secondAttribute="bottom" constant="15" id="7u6-C7-KKl"/>
+                            <constraint firstItem="1Zz-tb-bjB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Av8-Mq-Yi9"/>
+                            <constraint firstItem="lgR-4f-dIZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="FtK-gI-ZB4"/>
                             <constraint firstItem="qtw-cd-kdx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GML-5X-4Ft"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lgR-4f-dIZ" secondAttribute="trailing" constant="35" id="HfP-KD-7ty"/>
+                            <constraint firstItem="aJY-te-XDc" firstAttribute="height" secondItem="Uhr-xv-oGD" secondAttribute="height" id="J38-D8-Ppc"/>
+                            <constraint firstItem="aJY-te-XDc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="XIt-n0-rtT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aJY-te-XDc" secondAttribute="trailing" constant="35" id="YFt-k4-6nn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1Zz-tb-bjB" secondAttribute="trailing" id="cTp-uf-GJ8"/>
+                            <constraint firstItem="1Zz-tb-bjB" firstAttribute="height" secondItem="lgR-4f-dIZ" secondAttribute="height" id="dco-zY-Go1"/>
+                            <constraint firstItem="Uhr-xv-oGD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="gRE-RG-4DY"/>
+                            <constraint firstItem="lgR-4f-dIZ" firstAttribute="height" secondItem="aJY-te-XDc" secondAttribute="height" id="oyj-dZ-o5s"/>
                             <constraint firstItem="qtw-cd-kdx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pph-5l-F8T"/>
+                            <constraint firstItem="1Zz-tb-bjB" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" constant="-16" id="sCz-He-sAo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Uhr-xv-oGD" secondAttribute="trailing" constant="18" id="wXb-9y-GqV"/>
+                            <constraint firstItem="aJY-te-XDc" firstAttribute="top" secondItem="lgR-4f-dIZ" secondAttribute="bottom" constant="15" id="x6f-VA-s11"/>
+                            <constraint firstItem="1Zz-tb-bjB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="yLA-iQ-iCT"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
