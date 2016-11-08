@@ -43,10 +43,14 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
             // VIEW CUSTOMIZATION
-//            let startButtonWidth = startButton.frame.size.width
-//            startButton.layer.cornerRadius = startButtonWidth / 2.0
-//            startButton.layer.borderWidth = 3.0
-//            startButton.layer.borderColor = UIColor.white.cgColor
+            totalTimeView.layer.borderWidth = 3.0
+            totalTimeView.layer.borderColor = UIColor.white.cgColor
+            lapTimeView.layer.borderWidth = 3.0
+            lapTimeView.layer.borderColor = UIColor.white.cgColor
+            pauseResetView.layer.borderWidth = 3.0
+            pauseResetView.layer.borderColor = UIColor.white.cgColor
+            lapRestartView.layer.borderWidth = 3.0
+            lapRestartView.layer.borderColor = UIColor.white.cgColor
         
             let lapButtonFont = UIFont.monospacedDigitSystemFont(ofSize: 48, weight: UIFontWeightLight)
             lapTimerDisplay.font = lapButtonFont
@@ -61,6 +65,10 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var restartButton: UIButton!
     @IBOutlet weak var totalTimeLabel: UILabel!
+    @IBOutlet weak var totalTimeView: UIView!
+    @IBOutlet weak var lapTimeView: UIView!
+    @IBOutlet weak var pauseResetView: UIView!
+    @IBOutlet weak var lapRestartView: UIView!
    
     @IBAction func startTimer(_ sender: AnyObject) {
         timer.invalidate()
@@ -75,8 +83,8 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         animateStartButtonTransition()
         
         lapTimerDisplay.isHidden = false
-//        timerCounterDisplay.isHidden = false
-//        totalTimeLabel.isHidden = false
+        timerCounterDisplay.isHidden = false
+        totalTimeLabel.isHidden = false
         
 //        toggleLapButton()
         togglePauseButton()
