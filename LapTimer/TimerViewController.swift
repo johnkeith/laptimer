@@ -43,13 +43,9 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
             // VIEW CUSTOMIZATION
-            totalTimeView.layer.borderWidth = 3.0
-            totalTimeView.layer.borderColor = UIColor.white.cgColor
-            lapTimeView.layer.borderWidth = 3.0
-            lapTimeView.layer.borderColor = UIColor.white.cgColor
-            pauseResetView.layer.borderWidth = 3.0
+            pauseResetView.layer.borderWidth = 2.0
             pauseResetView.layer.borderColor = UIColor.white.cgColor
-            lapRestartView.layer.borderWidth = 3.0
+            lapRestartView.layer.borderWidth = 2.0
             lapRestartView.layer.borderColor = UIColor.white.cgColor
         
             let lapButtonFont = UIFont.monospacedDigitSystemFont(ofSize: 48, weight: UIFontWeightLight)
@@ -78,28 +74,27 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         
         initTimer()
         
-//        toggleStartButton()
-        clearStartButtonTitle()
-        animateStartButtonTransition()
+        startButton.isHidden = true
         
-        lapTimerDisplay.isHidden = false
-        timerCounterDisplay.isHidden = false
-        totalTimeLabel.isHidden = false
+        totalTimeView.isHidden = false
+        lapTimeView.isHidden = false
+        lapRestartView.isHidden = false
+        pauseResetView.isHidden = false
         
-//        toggleLapButton()
-        togglePauseButton()
+        lapButton.isHidden = false
+        pauseButton.isHidden = false
         print("start hit")
     }
     
-    func clearStartButtonTitle() {
-        startButton.setTitle("", for: .normal)
-    }
-    
-    func animateStartButtonTransition() {
-        UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions.allowUserInteraction, animations: { () -> Void in
-            self.startButton.backgroundColor = UIColor.white;
-        })
-    }
+//    func clearStartButtonTitle() {
+//        startButton.setTitle("", for: .normal)
+//    }
+//    
+//    func animateStartButtonTransition() {
+//        UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions.allowUserInteraction, animations: { () -> Void in
+//            self.startButton.backgroundColor = UIColor.white;
+//        })
+//    }
     
     @IBAction func pauseTimer(_ sender: AnyObject) {
         timer.invalidate()
