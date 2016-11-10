@@ -70,7 +70,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.058823529409999999" green="0.63921568630000003" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="DPH-yd-baX" firstAttribute="centerY" secondItem="1Zz-tb-bjB" secondAttribute="centerY" id="0Oi-Td-f7E"/>
                                     <constraint firstItem="DPH-yd-baX" firstAttribute="centerX" secondItem="1Zz-tb-bjB" secondAttribute="centerX" id="4wV-Wp-MyI"/>
@@ -94,7 +93,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.058823529409999999" green="0.63921568630000003" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="kww-ZY-wDd" firstAttribute="top" secondItem="lgR-4f-dIZ" secondAttribute="top" constant="8" id="CnG-ly-cq0"/>
                                     <constraint firstItem="mmj-Cm-bNm" firstAttribute="centerY" secondItem="lgR-4f-dIZ" secondAttribute="centerY" id="M48-JZ-yGy"/>
@@ -102,55 +100,15 @@
                                     <constraint firstItem="mmj-Cm-bNm" firstAttribute="centerX" secondItem="lgR-4f-dIZ" secondAttribute="centerX" id="eFq-pv-gtg"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uhr-xv-oGD" userLabel="Pause/Reset View">
-                                <frame key="frameInset" minX="20" minY="502" width="334" height="145"/>
-                                <subviews>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIQ-Xs-Dbt">
-                                        <frame key="frameInset" minX="3.43%" minY="50.55%" width="100.5" height="99.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Reset"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="50"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="resetTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gFz-8q-PrW"/>
-                                        </connections>
-                                    </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nH-hY-zwO">
-                                        <frame key="frameInset" minX="130" minY="37" width="166" height="71"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="46"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Pause">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="pauseTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zOI-ey-FEh"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.058823529409999999" green="0.63921568630000003" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="4nH-hY-zwO" firstAttribute="top" secondItem="Uhr-xv-oGD" secondAttribute="top" id="AO3-Zi-Qug"/>
-                                    <constraint firstItem="4nH-hY-zwO" firstAttribute="leading" secondItem="Uhr-xv-oGD" secondAttribute="leading" id="f0a-4w-dQ0"/>
-                                    <constraint firstAttribute="trailing" secondItem="4nH-hY-zwO" secondAttribute="trailing" id="lsT-lT-3TU"/>
-                                    <constraint firstAttribute="bottom" secondItem="4nH-hY-zwO" secondAttribute="bottom" id="n1U-JC-ToW"/>
-                                </constraints>
-                            </view>
                             <view hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aJY-te-XDc" userLabel="Lap/Restart View" colorLabel="IBBuiltInLabel-Yellow">
                                 <frame key="frameInset" minX="20" minY="340" width="334" height="154"/>
                                 <subviews>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJh-fQ-2nc">
-                                        <frame key="frameInset" minX="3.43%" minY="51.38%" width="100.5" height="99.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJh-fQ-2nc">
+                                        <frame key="frameInset" minX="4.52%" minY="51.85%" width="157" height="100"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="46"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Restart">
-                                            <color key="titleColor" red="0.16048419480000001" green="0.16372162100000001" blue="0.2134657502" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -174,16 +132,63 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.058823529409999999" green="0.63921568630000003" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.25098040700000002" green="0.25490197539999998" blue="0.2588235438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="xZK-YU-zeS" secondAttribute="bottom" id="2cs-HQ-z3o"/>
+                                    <constraint firstItem="vJh-fQ-2nc" firstAttribute="leading" secondItem="aJY-te-XDc" secondAttribute="leading" id="5Lq-po-JRU"/>
+                                    <constraint firstItem="vJh-fQ-2nc" firstAttribute="top" secondItem="aJY-te-XDc" secondAttribute="top" id="GQ5-u2-KZc"/>
                                     <constraint firstItem="xZK-YU-zeS" firstAttribute="top" secondItem="aJY-te-XDc" secondAttribute="top" id="LLC-E2-eKh"/>
+                                    <constraint firstAttribute="trailing" secondItem="vJh-fQ-2nc" secondAttribute="trailing" id="NGz-Bh-i0L"/>
                                     <constraint firstItem="xZK-YU-zeS" firstAttribute="leading" secondItem="aJY-te-XDc" secondAttribute="leading" id="WeP-da-P06"/>
                                     <constraint firstAttribute="trailing" secondItem="xZK-YU-zeS" secondAttribute="trailing" id="cuV-uS-QVW"/>
+                                    <constraint firstAttribute="bottom" secondItem="vJh-fQ-2nc" secondAttribute="bottom" id="mM6-m5-hBN"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uhr-xv-oGD" userLabel="Pause/Reset View">
+                                <frame key="frameInset" minX="20" minY="502" width="334" height="145"/>
+                                <subviews>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nH-hY-zwO">
+                                        <frame key="frameInset" minX="160" minY="37" width="166" height="71"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="46"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Pause">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pauseTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zOI-ey-FEh"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIQ-Xs-Dbt">
+                                        <frame key="frameInset" minX="4.68%" minY="48.89%" width="163" height="100"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="46"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Reset">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="50"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="resetTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gFz-8q-PrW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="4nH-hY-zwO" firstAttribute="top" secondItem="Uhr-xv-oGD" secondAttribute="top" id="AO3-Zi-Qug"/>
+                                    <constraint firstItem="NIQ-Xs-Dbt" firstAttribute="top" secondItem="Uhr-xv-oGD" secondAttribute="top" id="JN7-6W-UyU"/>
+                                    <constraint firstAttribute="trailing" secondItem="NIQ-Xs-Dbt" secondAttribute="trailing" id="KIW-L8-61I"/>
+                                    <constraint firstItem="NIQ-Xs-Dbt" firstAttribute="leading" secondItem="Uhr-xv-oGD" secondAttribute="leading" id="ND8-iF-rBO"/>
+                                    <constraint firstItem="4nH-hY-zwO" firstAttribute="leading" secondItem="Uhr-xv-oGD" secondAttribute="leading" id="f0a-4w-dQ0"/>
+                                    <constraint firstAttribute="trailing" secondItem="4nH-hY-zwO" secondAttribute="trailing" id="lsT-lT-3TU"/>
+                                    <constraint firstAttribute="bottom" secondItem="NIQ-Xs-Dbt" secondAttribute="bottom" id="mT7-V7-KjZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="4nH-hY-zwO" secondAttribute="bottom" id="n1U-JC-ToW"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.058823529409999999" green="0.63921568630000003" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.25098040700000002" green="0.25490197539999998" blue="0.2588235438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Uhr-xv-oGD" firstAttribute="top" secondItem="aJY-te-XDc" secondAttribute="bottom" constant="8" id="0bf-Xp-VAC"/>
                             <constraint firstItem="lgR-4f-dIZ" firstAttribute="top" secondItem="1Zz-tb-bjB" secondAttribute="bottom" constant="8" id="7u6-C7-KKl"/>

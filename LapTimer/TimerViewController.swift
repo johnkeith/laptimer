@@ -99,10 +99,11 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     @IBAction func pauseTimer(_ sender: AnyObject) {
         timer.invalidate()
         
-        toggleRestartButton()
-        toggleLapButton()
-        togglePauseButton()
-        toggleResetButton()
+        restartButton.isHidden = false
+        resetButton.isHidden = false
+        lapButton.isHidden = true
+        pauseButton.isHidden = true
+
         print("pause hit")
     }
     
@@ -112,19 +113,26 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         
         lapTimes.removeAll()
         
-        toggleRestartButton()
-        toggleResetButton()
-//        toggleStartButton()
+        restartButton.isHidden = true
+        resetButton.isHidden = true
+        startButton.isHidden = false
+        
+        totalTimeView.isHidden = true
+        lapTimeView.isHidden = true
+        lapRestartView.isHidden = true
+        pauseResetView.isHidden = true
+        
         print("reset hit")
     }
     
     @IBAction func restartTimer(_ sender: AnyObject) {
         initTimer()
         
-        toggleRestartButton()
-        toggleResetButton()
-        togglePauseButton()
-        toggleLapButton()
+        restartButton.isHidden = true
+        resetButton.isHidden = true
+        pauseButton.isHidden = false
+        lapButton.isHidden = false
+
         print("restart hit")
     }
     
@@ -257,26 +265,7 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         let totalLapTime = _lapTimes.map{$0.time}.reduce(0, +)
         return totalLapTime / Double(_lapTimes.count)
     }
-    
-    func toggleLapButton() {
-        lapButton.isHidden = !lapButton.isHidden
-    }
-    
-    func togglePauseButton() {
-        pauseButton.isHidden = !pauseButton.isHidden
-    }
-    
-    func toggleStartButton() {
-        startButton.isHidden = !startButton.isHidden
-    }
-    
-    func toggleResetButton() {
-        resetButton.isHidden = !resetButton.isHidden
-    }
-    
-    func toggleRestartButton() {
-        restartButton.isHidden = !restartButton.isHidden
-    }
+
     
     func ordinalSuffixForNumber(number: Int) -> String {
         switch (number) {
