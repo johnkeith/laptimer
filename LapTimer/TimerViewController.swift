@@ -87,6 +87,9 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     @IBOutlet weak var lapRestartView: UIView!
    
     @IBAction func startTimer(_ sender: AnyObject) {
+        springAnimationForView(targetView: lapRestartView)
+        springAnimationForView(targetView: pauseResetView)
+        
         timer.invalidate()
         
         startTime = NSDate.timeIntervalSinceReferenceDate
@@ -342,10 +345,19 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         }
     }
     
-//    func setAudioPlaybackToContinue() {
-//        do {
-//            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: AVAudioSessionCategoryOptions.duckOthers)
-//        } catch {}
-//    }
+    func springAnimationForView(targetView: UIView) {
+        targetView.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
+        
+        UIView.animate(withDuration: 0.5,
+           delay: 0,
+           usingSpringWithDamping: 1,
+           initialSpringVelocity: 6.0,
+           options: .allowUserInteraction,
+           animations: { [weak targetView] in
+            targetView?.transform = .identity
+        },
+           completion: nil)
+    }
+
 }
 
