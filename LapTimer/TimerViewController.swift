@@ -156,27 +156,36 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         print("restart hit")
     }
     
+    var disableLapButton = false
+    
     @IBAction func storeLap(_ sender: AnyObject) {
-        let results = timerUpdate(initialTime: startLapTime)
-        let sentancePrefix = "\(lapTimes.count + 1)\(ordinalSuffixForNumber(number: lapTimes.count + 1)) lap time was"
-        var lapTimeToSpeak = convertLapTimeToText(timeString: results.text, sentancePrefix: sentancePrefix)
-        
-        lapTimes.insert(results, at: 0)
+        if disableLapButton == false {
+            disableLapButton = true
+            let results = timerUpdate(initialTime: startLapTime)
+            let sentancePrefix = "\(lapTimes.count + 1)\(ordinalSuffixForNumber(number: lapTimes.count + 1)) lap time was"
+            var lapTimeToSpeak = convertLapTimeToText(timeString: results.text, sentancePrefix: sentancePrefix)
+            
+            lapTimes.insert(results, at: 0)
 
-        if lapTimes.count > 1 {
-            let averageLapTime = calculateAverageLapTime(_lapTimes: lapTimes)
-            let averageLapTimeAsString = timeElapsedAsString(inputTime: averageLapTime)
-            let averageLapTimeToSpeak = convertLapTimeToText(timeString: averageLapTimeAsString, sentancePrefix: "Your average lap time is")
-            lapTimeToSpeak += averageLapTimeToSpeak
+            if lapTimes.count > 1 {
+                let averageLapTime = calculateAverageLapTime(_lapTimes: lapTimes)
+                let averageLapTimeAsString = timeElapsedAsString(inputTime: averageLapTime)
+                let averageLapTimeToSpeak = convertLapTimeToText(timeString: averageLapTimeAsString, sentancePrefix: "Your average lap time is")
+                lapTimeToSpeak += averageLapTimeToSpeak
+            }
+            
+            textToSpeech(text: lapTimeToSpeak)
+            
+            startLapTime = NSDate.timeIntervalSinceReferenceDate
+            
+            print("lap hit")
+            lapTimerLabel.text = "Lap \(lapTimes.count + 1) Time"
+            print("lap hit")
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+                self.disableLapButton = false
+            }
         }
-        
-        textToSpeech(text: lapTimeToSpeak)
-        
-        startLapTime = NSDate.timeIntervalSinceReferenceDate
-        
-        print("lap hit")
-        lapTimerLabel.text = "Lap \(lapTimes.count + 1) Time"
-        print("lap hit")
     }
     
     func convertLapTimeToText(timeString: String, sentancePrefix: String) -> String {
