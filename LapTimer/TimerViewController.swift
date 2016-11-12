@@ -42,15 +42,34 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-            // VIEW CUSTOMIZATION
-            pauseResetView.layer.borderWidth = 2.0
-            pauseResetView.layer.borderColor = UIColor.white.cgColor
-            lapRestartView.layer.borderWidth = 2.0
-            lapRestartView.layer.borderColor = UIColor.white.cgColor
-        
-            let lapButtonFont = UIFont.monospacedDigitSystemFont(ofSize: 48, weight: UIFontWeightLight)
-            lapTimerDisplay.font = lapButtonFont
-            timerCounterDisplay.font = lapButtonFont
+        let superViewBgColor = self.view.backgroundColor
+    
+        // VIEW CUSTOMIZATION
+        setBordersForView(targetView: lapRestartView)
+        setBordersForView(targetView: pauseResetView)
+        setDropShadowForView(targetView: lapRestartView)
+        setDropShadowForView(targetView: pauseResetView)
+        lapRestartView.backgroundColor = superViewBgColor
+        pauseResetView.backgroundColor = superViewBgColor
+    
+        let lapButtonFont = UIFont.monospacedDigitSystemFont(ofSize: 48, weight: UIFontWeightLight)
+        lapTimerDisplay.font = lapButtonFont
+        timerCounterDisplay.font = lapButtonFont
+    }
+    
+    func setDropShadowForView(targetView: UIView) {
+        let shadowPath = UIBezierPath(rect: targetView.bounds)
+        targetView.layer.masksToBounds = false
+        targetView.layer.shadowColor = UIColor.black.cgColor
+        targetView.layer.shadowOffset = CGSize(width: 0, height: 5)
+        targetView.layer.shadowOpacity = 0.2
+        targetView.layer.shadowPath = shadowPath.cgPath
+    }
+    
+    func setBordersForView(targetView: UIView, borderWidth: CGFloat = CGFloat(2.0), borderRadius: CGFloat = CGFloat(4.0), borderColor: CGColor = UIColor.white.cgColor) {
+        targetView.layer.borderWidth = borderWidth
+        targetView.layer.cornerRadius = borderRadius
+        targetView.layer.borderColor = borderColor
     }
 
     @IBOutlet weak var lapTimerLabel: UILabel!

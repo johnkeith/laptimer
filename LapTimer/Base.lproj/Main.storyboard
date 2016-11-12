@@ -132,7 +132,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.25098040700000002" green="0.25490197539999998" blue="0.2588235438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="xZK-YU-zeS" secondAttribute="bottom" id="2cs-HQ-z3o"/>
                                     <constraint firstItem="vJh-fQ-2nc" firstAttribute="leading" secondItem="aJY-te-XDc" secondAttribute="leading" id="5Lq-po-JRU"/>
@@ -188,9 +187,10 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.25098040700000002" green="0.25490197539999998" blue="0.2588235438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.61960784310000006" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Uhr-xv-oGD" firstAttribute="top" secondItem="aJY-te-XDc" secondAttribute="bottom" constant="8" id="0bf-Xp-VAC"/>
+                            <constraint firstItem="Uhr-xv-oGD" firstAttribute="top" secondItem="aJY-te-XDc" secondAttribute="bottom" constant="16" id="0bf-Xp-VAC"/>
+                            <constraint firstItem="aJY-te-XDc" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="5JL-ha-x00"/>
                             <constraint firstItem="lgR-4f-dIZ" firstAttribute="top" secondItem="1Zz-tb-bjB" secondAttribute="bottom" constant="8" id="7u6-C7-KKl"/>
                             <constraint firstItem="1Zz-tb-bjB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Av8-Mq-Yi9"/>
                             <constraint firstItem="lgR-4f-dIZ" firstAttribute="width" secondItem="aJY-te-XDc" secondAttribute="width" id="EUh-vj-BmX"/>
@@ -205,10 +205,9 @@
                             <constraint firstItem="1Zz-tb-bjB" firstAttribute="height" secondItem="lgR-4f-dIZ" secondAttribute="height" id="dco-zY-Go1"/>
                             <constraint firstItem="aJY-te-XDc" firstAttribute="width" secondItem="Uhr-xv-oGD" secondAttribute="width" id="eBO-9f-4xX"/>
                             <constraint firstItem="Uhr-xv-oGD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gRE-RG-4DY"/>
-                            <constraint firstItem="lgR-4f-dIZ" firstAttribute="height" secondItem="aJY-te-XDc" secondAttribute="height" id="oyj-dZ-o5s"/>
                             <constraint firstItem="qtw-cd-kdx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pph-5l-F8T"/>
                             <constraint firstItem="1Zz-tb-bjB" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" constant="-32" id="pug-Eb-zyr"/>
-                            <constraint firstItem="1Zz-tb-bjB" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" constant="-18" id="sCz-He-sAo"/>
+                            <constraint firstItem="1Zz-tb-bjB" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" constant="-10" id="sCz-He-sAo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Uhr-xv-oGD" secondAttribute="trailing" id="wXb-9y-GqV"/>
                             <constraint firstItem="aJY-te-XDc" firstAttribute="top" secondItem="lgR-4f-dIZ" secondAttribute="bottom" constant="8" id="x6f-VA-s11"/>
                             <constraint firstItem="1Zz-tb-bjB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="yLA-iQ-iCT"/>
