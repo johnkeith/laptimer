@@ -53,6 +53,7 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
             timerCounterDisplay.font = lapButtonFont
     }
 
+    @IBOutlet weak var lapTimerLabel: UILabel!
     @IBOutlet weak var timerCounterDisplay: UILabel!
     @IBOutlet weak var lapTimerDisplay: UILabel!
     @IBOutlet weak var startButton: UIButton!
@@ -154,6 +155,8 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         
         startLapTime = NSDate.timeIntervalSinceReferenceDate
         
+        print("lap hit")
+        lapTimerLabel.text = "Lap \(lapTimes.count + 1) Time"
         print("lap hit")
     }
     

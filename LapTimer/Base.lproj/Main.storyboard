@@ -104,7 +104,7 @@
                                 <frame key="frameInset" minX="20" minY="340" width="334" height="154"/>
                                 <subviews>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJh-fQ-2nc">
-                                        <frame key="frameInset" minX="4.52%" minY="51.85%" width="157" height="100"/>
+                                        <frame key="frameInset" minX="0.045199999999999997" minY="0.51850000000000007" width="157" height="100"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="46"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Restart">
@@ -121,7 +121,7 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZK-YU-zeS">
-                                        <frame key="frameInset" minX="82.86%" minY="51.85%" width="159" height="100"/>
+                                        <frame key="frameInset" minX="0.8286" minY="0.51850000000000007" width="159" height="100"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="46"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Lap">
@@ -159,7 +159,7 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIQ-Xs-Dbt">
-                                        <frame key="frameInset" minX="4.68%" minY="48.89%" width="163" height="100"/>
+                                        <frame key="frameInset" minX="0.046800000000000001" minY="0.4889" width="163" height="100"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="46"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Reset">
@@ -221,6 +221,7 @@
                         <outlet property="lapRestartView" destination="aJY-te-XDc" id="x6y-wj-IoM"/>
                         <outlet property="lapTimeView" destination="lgR-4f-dIZ" id="rQ1-TJ-Jmo"/>
                         <outlet property="lapTimerDisplay" destination="mmj-Cm-bNm" id="LPk-3n-Pha"/>
+                        <outlet property="lapTimerLabel" destination="kww-ZY-wDd" id="1OK-Xd-vY5"/>
                         <outlet property="pauseButton" destination="4nH-hY-zwO" id="VNv-E4-PTF"/>
                         <outlet property="pauseResetView" destination="Uhr-xv-oGD" id="y3s-5T-Pt3"/>
                         <outlet property="resetButton" destination="NIQ-Xs-Dbt" id="ivE-wC-u9n"/>
