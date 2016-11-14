@@ -10,16 +10,6 @@ import UIKit
 import AVFoundation
 
 class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
-    let colorPalette: [String: UIColor] = [
-        "off-black": UIColor(red:0.07, green:0.07, blue:0.07, alpha:1.0),
-        "gray": UIColor(red:0.42, green:0.42, blue:0.42, alpha:1.0),
-        "dark": UIColor(red:0.18, green:0.18, blue:0.16, alpha:1.0),
-        "dark-blue": UIColor(red:0.20, green:0.30, blue:0.56, alpha:1.0),
-        "light-blue": UIColor(red:0.36, green:0.77, blue:0.94, alpha:1.0),
-        "light-orange": UIColor(red:1.00, green:0.72, blue:0.27, alpha:1.0),
-        "dark-orange": UIColor(red:0.91, green:0.33, blue:0.17, alpha:1.0)
-    ]
-    
     let synth = AVSpeechSynthesizer()
     
     var timerCounter = "00:00:00"
@@ -53,7 +43,7 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         
         // VIEW CUSTOMIZATION
         
-        self.view.backgroundColor = colorPalette["off-black"]
+        self.view.backgroundColor = Constants.colorPalette["off-black"]
         
         setBordersForView(targetView: lapRestartView)
         setBordersForView(targetView: pauseResetView)
@@ -73,8 +63,8 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     func setDropShadowForView(targetView: UIView) {
         let shadowPath = UIBezierPath(rect: targetView.bounds)
         targetView.layer.masksToBounds = false
-        targetView.layer.shadowColor = colorPalette["gray"]?.cgColor
-        targetView.layer.shadowOffset = CGSize(width: 0, height: 6)
+        targetView.layer.shadowColor = Constants.colorPalette["gray"]?.cgColor
+        targetView.layer.shadowOffset = CGSize(width: 0, height: 3)
         targetView.layer.shadowOpacity = 0.3
         targetView.layer.shadowPath = shadowPath.cgPath
     }
@@ -86,10 +76,10 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     }
     
     func setButtonColors() {
-        lapButton.backgroundColor = colorPalette["light-blue"]
-        restartButton.backgroundColor = colorPalette["light-orange"]
-        resetButton.backgroundColor = colorPalette["dark-orange"]
-        pauseButton.backgroundColor = colorPalette["dark-blue"]
+        lapButton.backgroundColor = Constants.colorPalette["light-blue"]
+        restartButton.backgroundColor = Constants.colorPalette["light-orange"]
+        resetButton.backgroundColor = Constants.colorPalette["dark-orange"]
+        pauseButton.backgroundColor = Constants.colorPalette["dark-blue"]
     }
 
     @IBOutlet weak var lapTimerLabel: UILabel!
