@@ -10,7 +10,15 @@ import UIKit
 import AVFoundation
 
 class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
-    let screenSize: CGRect = UIScreen.main.bounds
+    let colorPalette: [String: UIColor] = [
+        "off-black": UIColor(red:0.07, green:0.07, blue:0.07, alpha:1.0),
+        "gray": UIColor(red:0.42, green:0.42, blue:0.42, alpha:1.0),
+        "dark": UIColor(red:0.18, green:0.18, blue:0.16, alpha:1.0),
+        "dark-blue": UIColor(red:0.20, green:0.30, blue:0.56, alpha:1.0),
+        "light-blue": UIColor(red:0.36, green:0.77, blue:0.94, alpha:1.0),
+        "light-orange": UIColor(red:1.00, green:0.72, blue:0.27, alpha:1.0),
+        "dark-orange": UIColor(red:0.91, green:0.33, blue:0.17, alpha:1.0)
+    ]
     
     let synth = AVSpeechSynthesizer()
     
@@ -42,15 +50,20 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        let superViewBgColor = self.view.backgroundColor
-    
+        
         // VIEW CUSTOMIZATION
+        
+        self.view.backgroundColor = colorPalette["off-black"]
+        
         setBordersForView(targetView: lapRestartView)
         setBordersForView(targetView: pauseResetView)
+        setBordersForView(targetView: lapButton)
+        setBordersForView(targetView: restartButton)
+        setBordersForView(targetView: resetButton)
+        setBordersForView(targetView: pauseButton)
+        setButtonColors()
         setDropShadowForView(targetView: lapRestartView)
         setDropShadowForView(targetView: pauseResetView)
-        lapRestartView.backgroundColor = superViewBgColor
-        pauseResetView.backgroundColor = superViewBgColor
     
         let lapButtonFont = UIFont.monospacedDigitSystemFont(ofSize: 48, weight: UIFontWeightLight)
         lapTimerDisplay.font = lapButtonFont
@@ -60,16 +73,23 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     func setDropShadowForView(targetView: UIView) {
         let shadowPath = UIBezierPath(rect: targetView.bounds)
         targetView.layer.masksToBounds = false
-        targetView.layer.shadowColor = UIColor.black.cgColor
-        targetView.layer.shadowOffset = CGSize(width: 0, height: 5)
-        targetView.layer.shadowOpacity = 0.2
+        targetView.layer.shadowColor = colorPalette["gray"]?.cgColor
+        targetView.layer.shadowOffset = CGSize(width: 0, height: 6)
+        targetView.layer.shadowOpacity = 0.3
         targetView.layer.shadowPath = shadowPath.cgPath
     }
     
-    func setBordersForView(targetView: UIView, borderWidth: CGFloat = CGFloat(2.0), borderRadius: CGFloat = CGFloat(4.0), borderColor: CGColor = UIColor.white.cgColor) {
+    func setBordersForView(targetView: AnyObject, borderWidth: CGFloat = CGFloat(2.0), borderRadius: CGFloat = CGFloat(4.0), borderColor: CGColor = UIColor.white.cgColor) {
         targetView.layer.borderWidth = borderWidth
         targetView.layer.cornerRadius = borderRadius
         targetView.layer.borderColor = borderColor
+    }
+    
+    func setButtonColors() {
+        lapButton.backgroundColor = colorPalette["light-blue"]
+        restartButton.backgroundColor = colorPalette["light-orange"]
+        resetButton.backgroundColor = colorPalette["dark-orange"]
+        pauseButton.backgroundColor = colorPalette["dark-blue"]
     }
 
     @IBOutlet weak var lapTimerLabel: UILabel!
@@ -135,6 +155,7 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         lapTimerDisplay.text = "00:00:00"
         
         lapTimes.removeAll()
+        lapTimerLabel.text = "Lap Time"
         
         restartButton.isHidden = true
         resetButton.isHidden = true
@@ -353,10 +374,17 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
            usingSpringWithDamping: 1,
            initialSpringVelocity: 6.0,
            options: .allowUserInteraction,
-           animations: { [weak targetView] in
-            targetView?.transform = .identity
+           animations: {
+            targetView.transform = .identity
         },
            completion: nil)
+    }
+    
+    func buttonPressAnimation(targetButton: UIButton) {
+        UIView.animate(withDuration: 1.0,
+            animations: {
+            }
+        )
     }
 
 }

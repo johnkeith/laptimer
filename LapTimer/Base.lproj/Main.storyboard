@@ -110,12 +110,6 @@
                                         <state key="normal" title="Restart">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="50"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="restartTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zVK-e2-fQr"/>
                                         </connections>
@@ -161,15 +155,9 @@
                                         <frame key="frameInset" minX="0.046800000000000001" minY="0.4889" width="163" height="100"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="46"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Reset">
+                                        <state key="normal" title="Clear">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="50"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="resetTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gFz-8q-PrW"/>
                                         </connections>
@@ -187,7 +175,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.61960784310000006" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Uhr-xv-oGD" firstAttribute="top" secondItem="aJY-te-XDc" secondAttribute="bottom" constant="16" id="0bf-Xp-VAC"/>
                             <constraint firstItem="aJY-te-XDc" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="5JL-ha-x00"/>
