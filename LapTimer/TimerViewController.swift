@@ -96,6 +96,8 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     @IBOutlet weak var pauseResetView: UIView!
     @IBOutlet weak var lapRestartView: UIView!
    
+    @IBAction func unwindToTimer (sender: UIStoryboardSegue){}
+
     @IBAction func startTimer(_ sender: AnyObject) {
         springAnimationForView(targetView: lapRestartView)
         springAnimationForView(targetView: pauseResetView)

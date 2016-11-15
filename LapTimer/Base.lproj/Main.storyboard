@@ -45,13 +45,23 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qtw-cd-kdx" secondAttribute="height" multiplier="1:1" id="m5C-BK-jWR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="58"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="58"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="START">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="startTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P8B-HD-pxo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mU7-R0-Prj">
+                                <frame key="frameInset" minY="593" width="375" height="54"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                <state key="normal" title="Settings">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="O0y-Ya-fVz" kind="show" id="86z-4w-WzP"/>
                                 </connections>
                             </button>
                             <view hidden="YES" opaque="NO" contentMode="top" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Zz-tb-bjB" userLabel="Total Time View" colorLabel="IBBuiltInLabel-Red">
@@ -193,9 +203,11 @@
                             <constraint firstItem="1Zz-tb-bjB" firstAttribute="height" secondItem="lgR-4f-dIZ" secondAttribute="height" id="dco-zY-Go1"/>
                             <constraint firstItem="aJY-te-XDc" firstAttribute="width" secondItem="Uhr-xv-oGD" secondAttribute="width" id="eBO-9f-4xX"/>
                             <constraint firstItem="Uhr-xv-oGD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gRE-RG-4DY"/>
+                            <constraint firstItem="mU7-R0-Prj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="icX-oj-neD"/>
                             <constraint firstItem="qtw-cd-kdx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pph-5l-F8T"/>
                             <constraint firstItem="1Zz-tb-bjB" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" constant="-32" id="pug-Eb-zyr"/>
                             <constraint firstItem="1Zz-tb-bjB" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" constant="-10" id="sCz-He-sAo"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mU7-R0-Prj" secondAttribute="bottom" constant="20" id="tEN-9H-U6x"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Uhr-xv-oGD" secondAttribute="trailing" id="wXb-9y-GqV"/>
                             <constraint firstItem="aJY-te-XDc" firstAttribute="top" secondItem="lgR-4f-dIZ" secondAttribute="bottom" constant="8" id="x6f-VA-s11"/>
                             <constraint firstItem="1Zz-tb-bjB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="yLA-iQ-iCT"/>
@@ -226,7 +238,7 @@
         <!--Settings-->
         <scene sceneID="AwV-VW-WjO">
             <objects>
-                <viewController title="Settings" id="O0y-Ya-fVz" sceneMemberID="viewController">
+                <viewController title="Settings" modalTransitionStyle="flipHorizontal" id="O0y-Ya-fVz" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cyb-0D-rFC"/>
                         <viewControllerLayoutGuide type="bottom" id="JWy-WY-dBH"/>
@@ -234,13 +246,30 @@
                     <view key="view" contentMode="scaleToFill" id="MwC-ls-Tie">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f92-x1-s6r">
+                                <frame key="frameInset" minX="16" minY="20" width="62" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                <state key="normal" title="← Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="LX0-Je-UGi" kind="unwind" unwindAction="unwindToTimerWithSender:" id="y57-0K-EyQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" title="Settings" id="fHL-hf-vWW"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="we6-ys-tSw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="LX0-Je-UGi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1175" y="145"/>
+            <point key="canvasLocation" x="1173.5999999999999" y="144.3778110944528"/>
         </scene>
     </scenes>
 </document>

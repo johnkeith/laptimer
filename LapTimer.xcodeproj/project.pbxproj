@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		635A69DC1D9E866D00C7FD36 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635A69DB1D9E866D00C7FD36 /* AVFoundation.framework */; };
 		63C4AD101DDA0FD5000731FE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C4AD0F1DDA0FD5000731FE /* Constants.swift */; };
+		63C4AD121DDA1FC0000731FE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C4AD111DDA1FC0000731FE /* SettingsViewController.swift */; };
 		63E44BE11D9721710099E686 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E44BE01D9721710099E686 /* AppDelegate.swift */; };
 		63E44BE31D9721710099E686 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E44BE21D9721710099E686 /* TimerViewController.swift */; };
 		63E44BE61D9721710099E686 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63E44BE41D9721710099E686 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		635A69DB1D9E866D00C7FD36 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		63C4AD0F1DDA0FD5000731FE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		63C4AD111DDA1FC0000731FE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		63E44BDD1D9721710099E686 /* LapTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LapTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E44BE01D9721710099E686 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63E44BE21D9721710099E686 /* TimerViewController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
@@ -118,6 +120,7 @@
 				63E44BE91D9721710099E686 /* LaunchScreen.storyboard */,
 				63E44BEC1D9721710099E686 /* Info.plist */,
 				63C4AD0F1DDA0FD5000731FE /* Constants.swift */,
+				63C4AD111DDA1FC0000731FE /* SettingsViewController.swift */,
 			);
 			path = LapTimer;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				63E44BE31D9721710099E686 /* TimerViewController.swift in Sources */,
 				63C4AD101DDA0FD5000731FE /* Constants.swift in Sources */,
 				63E44BE11D9721710099E686 /* AppDelegate.swift in Sources */,
+				63C4AD121DDA1FC0000731FE /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
