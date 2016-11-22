@@ -10,10 +10,13 @@ import Foundation
 import UIKit
 
 class SettingsViewController: UIViewController {
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        // VIEW CUSTOMIZATION
-        self.view.backgroundColor = Constants.colorPalette["off-black"]
+        self.view.backgroundColor = Constants.colorPalette["gray"]
+        print("settings view loaded")
     }
+    
+    // next is core data and saving prefs to persist across sessions
+    // also want to consider redesign - strip labels, show in 1/4, 3/4 sections 
 }

@@ -31,19 +31,8 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         
         timerCounterDisplay.text = timerCounter
         lapTimerDisplay.text = lapCounter
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
         
-        // VIEW CUSTOMIZATION
-        
-        self.view.backgroundColor = Constants.colorPalette["off-black"]
+        self.view.backgroundColor = Constants.colorPalette["gray"]
         
         setBordersForView(targetView: lapRestartView)
         setBordersForView(targetView: pauseResetView)
@@ -54,19 +43,25 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         setButtonColors()
         setDropShadowForView(targetView: lapRestartView)
         setDropShadowForView(targetView: pauseResetView)
-    
+        
         let lapButtonFont = UIFont.monospacedDigitSystemFont(ofSize: 48, weight: UIFontWeightLight)
         lapTimerDisplay.font = lapButtonFont
         timerCounterDisplay.font = lapButtonFont
     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
     func setDropShadowForView(targetView: UIView) {
         let shadowPath = UIBezierPath(rect: targetView.bounds)
-        targetView.layer.masksToBounds = false
-        targetView.layer.shadowColor = Constants.colorPalette["gray"]?.cgColor
-        targetView.layer.shadowOffset = CGSize(width: 0, height: 3)
-        targetView.layer.shadowOpacity = 0.3
-        targetView.layer.shadowPath = shadowPath.cgPath
+//        targetView.layer.masksToBounds = false
+        targetView.layer.shadowColor = Constants.colorPalette["light-orange"]?.cgColor
+        targetView.layer.shadowOffset = CGSize(width: 0, height: 5)
+        targetView.layer.shadowOpacity = 0.4
+//        targetView.layer.shadowPath = shadowPath.cgPath
+        targetView.layer.shadowRadius = 5.0
     }
     
     func setBordersForView(targetView: AnyObject, borderWidth: CGFloat = CGFloat(2.0), borderRadius: CGFloat = CGFloat(4.0), borderColor: CGColor = UIColor.white.cgColor) {
@@ -76,10 +71,10 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     }
     
     func setButtonColors() {
-        lapButton.backgroundColor = Constants.colorPalette["light-blue"]
-        restartButton.backgroundColor = Constants.colorPalette["light-orange"]
+        lapButton.backgroundColor = Constants.colorPalette["dark-blue"]
+        restartButton.backgroundColor = Constants.colorPalette["dark-gray"]
         resetButton.backgroundColor = Constants.colorPalette["dark-orange"]
-        pauseButton.backgroundColor = Constants.colorPalette["dark-blue"]
+        pauseButton.backgroundColor = Constants.colorPalette["light-orange"]
     }
 
     @IBOutlet weak var lapTimerLabel: UILabel!
@@ -99,6 +94,8 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     @IBAction func unwindToTimer (sender: UIStoryboardSegue){}
 
     @IBAction func startTimer(_ sender: AnyObject) {
+        self.view.backgroundColor = Constants.colorPalette["blue-background"]
+        
         springAnimationForView(targetView: lapRestartView)
         springAnimationForView(targetView: pauseResetView)
         
@@ -132,6 +129,7 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
 //    }
     
     @IBAction func pauseTimer(_ sender: AnyObject) {
+        self.view.backgroundColor = Constants.colorPalette["gray"]
         timer.invalidate()
         
         restartButton.isHidden = false
@@ -162,6 +160,8 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     }
     
     @IBAction func restartTimer(_ sender: AnyObject) {
+        self.view.backgroundColor = Constants.colorPalette["blue-background"]
+        
         initTimer()
         
         restartButton.isHidden = true
