@@ -266,11 +266,23 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="None" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gak-zb-CiW">
+                                        <frame key="frameInset" minX="164" minY="61" width="171" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <connections>
+                                            <action selector="lapsPerMileEditingFinished:" destination="O0y-Ya-fVz" eventType="primaryActionTriggered" id="kX8-sY-T4m"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="w9i-d6-pvu" firstAttribute="leading" secondItem="7Sa-S9-nt4" secondAttribute="leading" id="F8Z-Sp-gQ7"/>
+                                    <constraint firstItem="w9i-d6-pvu" firstAttribute="width" secondItem="7Sa-S9-nt4" secondAttribute="width" multiplier="0.5" id="QGv-ls-YHE"/>
+                                    <constraint firstItem="gak-zb-CiW" firstAttribute="width" secondItem="7Sa-S9-nt4" secondAttribute="width" multiplier="0.5" id="Ryz-Co-727"/>
+                                    <constraint firstItem="gak-zb-CiW" firstAttribute="top" secondItem="7Sa-S9-nt4" secondAttribute="top" id="Xbv-eD-8Sf"/>
                                     <constraint firstItem="w9i-d6-pvu" firstAttribute="top" secondItem="7Sa-S9-nt4" secondAttribute="top" id="gRw-0M-5aw"/>
+                                    <constraint firstAttribute="trailing" secondItem="gak-zb-CiW" secondAttribute="trailing" id="ki4-lq-eKr"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -290,6 +302,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="lapsPerMileInput" destination="gak-zb-CiW" id="BTQ-Ep-K0y"/>
                         <outlet property="lapsPerMileView" destination="7Sa-S9-nt4" id="mub-GX-PHF"/>
                     </connections>
                 </viewController>

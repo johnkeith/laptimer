@@ -10,10 +10,13 @@ import Foundation
 import UIKit
 
 class SettingsViewController: UIViewController {
+    let prefs = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = Constants.colorPalette["gray"]
+        lapsPerMileInput.text = "\(prefs.integer(forKey: "lapsPerMile"))"
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -21,8 +24,12 @@ class SettingsViewController: UIViewController {
     }
     
     @IBOutlet weak var lapsPerMileInput: UITextField!
-    @IBOutlet weak var lapsPerMileView: UIView!    
+    @IBOutlet weak var lapsPerMileView: UIView!
     
+    
+    @IBAction func lapsPerMileEditingFinished(_ sender: AnyObject) {
+        let lapsPerMileInt = Int(lapsPerMileInput.text!)
+        prefs.set(lapsPerMileInt!, forKey: "lapsPerMile")
+    }
     // next is core data and saving prefs to persist across sessions
-    // also want to consider redesign - strip labels, show in 1/4, 3/4 sections 
 }
