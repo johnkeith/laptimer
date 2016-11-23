@@ -17,7 +17,8 @@ struct Constants {
         "dark-blue": UIColor(red:0.00, green:0.28, blue:0.56, alpha:1.0),
         "dark-gray": UIColor(red:0.06, green:0.15, blue:0.44, alpha:1.0),
         "dark-orange": UIColor(red:0.72, green:0.11, blue:0.05, alpha:1.0),
-        "shadow-gray": UIColor(red:0.15, green:0.21, blue:0.21, alpha:1.0)
+        "shadow-gray": UIColor(red:0.15, green:0.21, blue:0.21, alpha:1.0),
+        "black": UIColor.black
     ]
 //    static let colorPalette: [String: UIColor] = [
 //        "blue-background": UIColor(red:0.07, green:0.07, blue:0.07, alpha:1.0),

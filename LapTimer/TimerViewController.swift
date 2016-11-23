@@ -70,7 +70,7 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     func setButtonColors() {
         lapButton.backgroundColor = Constants.colorPalette["dark-blue"]
         restartButton.backgroundColor = Constants.colorPalette["blue-background"]
-        resetButton.backgroundColor = Constants.colorPalette["dark-orange"]
+        resetButton.backgroundColor = Constants.colorPalette["gray"]
         pauseButton.backgroundColor = Constants.colorPalette["light-orange"]
     }
 
@@ -91,7 +91,7 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     @IBAction func unwindToTimer (sender: UIStoryboardSegue){}
 
     @IBAction func startTimer(_ sender: AnyObject) {
-        self.view.backgroundColor = Constants.colorPalette["blue-background"]
+        animateBackgroundColorChange(targetView: self.view, color: Constants.colorPalette["blue-background"]!)
         
         springAnimationForView(targetView: lapRestartView)
         springAnimationForView(targetView: pauseResetView)
@@ -126,7 +126,7 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
 //    }
     
     @IBAction func pauseTimer(_ sender: AnyObject) {
-        self.view.backgroundColor = Constants.colorPalette["gray"]
+        animateBackgroundColorChange(targetView: self.view, color: Constants.colorPalette["black"]!)
         timer.invalidate()
         
         restartButton.isHidden = false
@@ -138,6 +138,8 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     }
     
     @IBAction func resetTimer(_ sender: AnyObject) {
+        animateBackgroundColorChange(targetView: self.view, color: Constants.colorPalette["gray"]!)
+
         timerCounterDisplay.text = "00:00:00"
         lapTimerDisplay.text = "00:00:00"
         
@@ -157,7 +159,7 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     }
     
     @IBAction func restartTimer(_ sender: AnyObject) {
-        self.view.backgroundColor = Constants.colorPalette["blue-background"]
+        animateBackgroundColorChange(targetView: self.view, color: Constants.colorPalette["blue-background"]!)
         
         initTimer()
         
@@ -369,11 +371,10 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
            completion: nil)
     }
     
-    func buttonPressAnimation(targetButton: UIButton) {
-        UIView.animate(withDuration: 1.0,
-            animations: {
-            }
-        )
+    func animateBackgroundColorChange(targetView: UIView, color: UIColor) {
+        UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions.allowUserInteraction, animations: { () -> Void in
+            targetView.backgroundColor = color;
+        })
     }
 
 }
