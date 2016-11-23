@@ -55,12 +55,9 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     }
     
     func setDropShadowForView(targetView: UIView) {
-        let shadowPath = UIBezierPath(rect: targetView.bounds)
-//        targetView.layer.masksToBounds = false
-        targetView.layer.shadowColor = Constants.colorPalette["light-orange"]?.cgColor
+        targetView.layer.shadowColor = Constants.colorPalette["shadow-gray"]?.cgColor
         targetView.layer.shadowOffset = CGSize(width: 0, height: 5)
         targetView.layer.shadowOpacity = 0.4
-//        targetView.layer.shadowPath = shadowPath.cgPath
         targetView.layer.shadowRadius = 5.0
     }
     
@@ -72,7 +69,7 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     
     func setButtonColors() {
         lapButton.backgroundColor = Constants.colorPalette["dark-blue"]
-        restartButton.backgroundColor = Constants.colorPalette["dark-gray"]
+        restartButton.backgroundColor = Constants.colorPalette["blue-background"]
         resetButton.backgroundColor = Constants.colorPalette["dark-orange"]
         pauseButton.backgroundColor = Constants.colorPalette["light-orange"]
     }

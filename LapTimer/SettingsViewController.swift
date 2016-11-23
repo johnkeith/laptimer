@@ -14,7 +14,6 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = Constants.colorPalette["gray"]
-        print("settings view loaded")
     }
     
     // next is core data and saving prefs to persist across sessions
