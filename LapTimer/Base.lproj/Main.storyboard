@@ -276,11 +276,11 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7Sa-S9-nt4" firstAttribute="width" secondItem="MwC-ls-Tie" secondAttribute="width" id="AgL-iy-ME0"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="7Sa-S9-nt4" secondAttribute="leading" id="WGo-iM-fX7"/>
+                            <constraint firstItem="7Sa-S9-nt4" firstAttribute="width" secondItem="MwC-ls-Tie" secondAttribute="width" constant="-32" id="AgL-iy-ME0"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="7Sa-S9-nt4" secondAttribute="leading" id="BIt-Bu-ZaE"/>
                             <constraint firstItem="7Sa-S9-nt4" firstAttribute="top" secondItem="f92-x1-s6r" secondAttribute="bottom" constant="16" id="Z1U-es-Mvl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7Sa-S9-nt4" secondAttribute="trailing" id="i3q-QI-K4m"/>
                             <constraint firstItem="f92-x1-s6r" firstAttribute="top" secondItem="Cyb-0D-rFC" secondAttribute="bottom" constant="8" id="jaT-Uy-oSV"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7Sa-S9-nt4" secondAttribute="trailing" id="mZK-R9-JqW"/>
                             <constraint firstItem="7Sa-S9-nt4" firstAttribute="height" secondItem="MwC-ls-Tie" secondAttribute="height" multiplier="0.2" id="nbU-8T-Yxb"/>
                             <constraint firstAttribute="leadingMargin" secondItem="f92-x1-s6r" secondAttribute="leading" id="vDX-zE-5rK"/>
                         </constraints>
