@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 class SettingsViewController: UIViewController {
-    let prefs = UserDefaults.standard
+    let globalPrefs = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = Constants.colorPalette["gray"]
-        lapsPerMileInput.text = "\(prefs.integer(forKey: "lapsPerMile"))"
+        lapsPerMileInput.text = "\(globalPrefs.integer(forKey: "lapsPerMile"))"
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -29,7 +29,6 @@ class SettingsViewController: UIViewController {
     
     @IBAction func lapsPerMileEditingFinished(_ sender: AnyObject) {
         let lapsPerMileInt = Int(lapsPerMileInput.text!)
-        prefs.set(lapsPerMileInt!, forKey: "lapsPerMile")
+        globalPrefs.set(lapsPerMileInt!, forKey: "lapsPerMile")
     }
-    // next is core data and saving prefs to persist across sessions
 }

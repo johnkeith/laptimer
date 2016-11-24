@@ -11,6 +11,7 @@ import AVFoundation
 
 class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     let synth = AVSpeechSynthesizer()
+    let globalPrefs = UserDefaults.standard
     
     var timerCounter = "00:00:00"
     var lapCounter = "00:00:00"
@@ -207,13 +208,14 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         let splitTimeString = timeString.components(separatedBy: ":")
         let minutes = splitTimeString[0]
         let seconds = splitTimeString[1]
+        let milliseconds = splitTimeString[2]
         let minutesInt = Int(minutes)
         let secondsInt = Int(seconds)
         
         var convertedString = sentancePrefix
         
         if minutesInt! > 0 {
-            convertedString += " \(minutes) minute"
+            convertedString += " \(minutesInt!) minute"
         }
         
         if minutesInt! > 1 {
@@ -225,11 +227,7 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         }
         
         if secondsInt! > 0 {
-            convertedString += " \(seconds) second"
-        }
-        
-        if secondsInt! > 1 {
-            convertedString += "s"
+            convertedString += " \(secondsInt!) point \(milliseconds) seconds"
         }
         
         return convertedString
