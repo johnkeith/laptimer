@@ -168,8 +168,6 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         resetButton.isHidden = true
         pauseButton.isHidden = false
         lapButton.isHidden = false
-
-        print("restart hit")
     }
     
     var disableLapButton = false
@@ -194,15 +192,13 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
             
             startLapTime = NSDate.timeIntervalSinceReferenceDate
             
-            print("lap hit")
             lapTimerLabel.text = "Lap \(lapTimes.count + 1) Time"
-            print("lap hit")
             
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
                 self.disableLapButton = false
             }
             
-            calculateTotalMileTime(_lapTimes: lapTimes)
+            checkIfMileReached(_lapTimes: lapTimes)
         }
     }
     
@@ -308,15 +304,29 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     }
     
     func calculateAverageLapTime(_lapTimes: [(text: String, time: Double)]) -> Double {
-        let totalLapTime = _lapTimes.map{$0.time}.reduce(0, +)
+        let totalLapTime = getTotalLapsTime(_lapTimes: _lapTimes)
         return totalLapTime / Double(_lapTimes.count)
     }
     
-    func calculateTotalMileTime(_lapTimes: [(text: String, time: Double)]) -> Double {
+    func checkIfMileReached(_lapTimes: [(text: String, time: Double)]) {
         let chunkSize = globalPrefs.integer(forKey: "lapsPerMile")
-        let chunked = lapTimes.chunk(chunkSize: chunkSize)
+        let lapsByMile = lapTimes.chunk(chunkSize: chunkSize)
 
-        return 2.0
+        if(lapsByMile.last?.count == chunkSize) {
+            notifyMileTime(_lapTimes: lapsByMile.last as! [(text: String, time: Double)], mileNumber: lapsByMile.count)
+        }
+    }
+    
+    func getTotalLapsTime(_lapTimes: [(text: String, time: Double)]) -> Double {
+        return _lapTimes.map{$0.time}.reduce(0, +)
+    }
+    
+    func notifyMileTime(_lapTimes: [(text: String, time: Double)], mileNumber: Int) {
+        let totalMileTime = getTotalLapsTime(_lapTimes: lapTimes)
+        let totalLapTimeAsString = timeElapsedAsString(inputTime: totalMileTime)
+        let totalLapTimeToSpeak = convertLapTimeToText(timeString: totalLapTimeAsString, sentancePrefix: "Your total mile time for mile \(mileNumber) was")
+        
+        textToSpeech(text: totalLapTimeToSpeak)
     }
 
     
