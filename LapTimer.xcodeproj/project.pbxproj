@@ -11,6 +11,7 @@
 		63C4AD101DDA0FD5000731FE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C4AD0F1DDA0FD5000731FE /* Constants.swift */; };
 		63C4AD121DDA1FC0000731FE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C4AD111DDA1FC0000731FE /* SettingsViewController.swift */; };
 		63C4AD151DE4F382000731FE /* LapTimerDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63C4AD131DE4F382000731FE /* LapTimerDataModel.xcdatamodeld */; };
+		63C4AD381DE6989B000731FE /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C4AD371DE6989B000731FE /* ArrayExtensions.swift */; };
 		63E44BE11D9721710099E686 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E44BE01D9721710099E686 /* AppDelegate.swift */; };
 		63E44BE31D9721710099E686 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E44BE21D9721710099E686 /* TimerViewController.swift */; };
 		63E44BE61D9721710099E686 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63E44BE41D9721710099E686 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		63C4AD0F1DDA0FD5000731FE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		63C4AD111DDA1FC0000731FE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		63C4AD141DE4F382000731FE /* LapTimerDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LapTimerDataModel.xcdatamodel; sourceTree = "<group>"; };
+		63C4AD371DE6989B000731FE /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		63E44BDD1D9721710099E686 /* LapTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LapTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E44BE01D9721710099E686 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63E44BE21D9721710099E686 /* TimerViewController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
@@ -124,6 +126,7 @@
 				63E44BEC1D9721710099E686 /* Info.plist */,
 				63C4AD0F1DDA0FD5000731FE /* Constants.swift */,
 				63C4AD111DDA1FC0000731FE /* SettingsViewController.swift */,
+				63C4AD371DE6989B000731FE /* ArrayExtensions.swift */,
 			);
 			path = LapTimer;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63E44BE31D9721710099E686 /* TimerViewController.swift in Sources */,
+				63C4AD381DE6989B000731FE /* ArrayExtensions.swift in Sources */,
 				63C4AD101DDA0FD5000731FE /* Constants.swift in Sources */,
 				63E44BE11D9721710099E686 /* AppDelegate.swift in Sources */,
 				63C4AD151DE4F382000731FE /* LapTimerDataModel.xcdatamodeld in Sources */,

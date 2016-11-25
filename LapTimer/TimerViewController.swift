@@ -201,6 +201,8 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
                 self.disableLapButton = false
             }
+            
+            calculateTotalMileTime(_lapTimes: lapTimes)
         }
     }
     
@@ -308,6 +310,13 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     func calculateAverageLapTime(_lapTimes: [(text: String, time: Double)]) -> Double {
         let totalLapTime = _lapTimes.map{$0.time}.reduce(0, +)
         return totalLapTime / Double(_lapTimes.count)
+    }
+    
+    func calculateTotalMileTime(_lapTimes: [(text: String, time: Double)]) -> Double {
+        let chunkSize = globalPrefs.integer(forKey: "lapsPerMile")
+        let chunked = lapTimes.chunk(chunkSize: chunkSize)
+
+        return 2.0
     }
 
     
