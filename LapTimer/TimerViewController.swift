@@ -310,10 +310,13 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     
     func checkIfMileReached(_lapTimes: [(text: String, time: Double)]) {
         let chunkSize = globalPrefs.integer(forKey: "lapsPerMile")
-        let lapsByMile = lapTimes.chunk(chunkSize: chunkSize)
-
-        if(lapsByMile.last?.count == chunkSize) {
-            notifyMileTime(_lapTimes: lapsByMile.last as! [(text: String, time: Double)], mileNumber: lapsByMile.count)
+        
+        if(chunkSize > 0) {
+            let lapsByMile = lapTimes.chunk(chunkSize: chunkSize)
+            
+            if(lapsByMile.last?.count == chunkSize) {
+                notifyMileTime(_lapTimes: lapsByMile.last as! [(text: String, time: Double)], mileNumber: lapsByMile.count)
+            }
         }
     }
     
@@ -355,7 +358,6 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         DispatchQueue.global(qos: .background).async {
             do {
                 try AVAudioSession.sharedInstance().setActive(true)
-                print("set audio active")
                 self.synth.speak(utterance)
             } catch {
                 print("there was an error activating audio")
@@ -367,7 +369,6 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         DispatchQueue.global(qos: .background).async {
             do {
               try AVAudioSession.sharedInstance().setActive(false)
-                print("set audit session inactive")
             } catch {
                 print("there was an error deactivating audio")
             }

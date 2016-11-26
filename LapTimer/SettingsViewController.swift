@@ -9,14 +9,18 @@
 import Foundation
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, UITextFieldDelegate {
     let globalPrefs = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = Constants.colorPalette["gray"]
-        lapsPerMileInput.text = "\(globalPrefs.integer(forKey: "lapsPerMile"))"
+        addDoneButtonOnKeyboard(input: self.lapsPerMileInput)
+        let lapsPerMile = globalPrefs.integer(forKey: "lapsPerMile")
+        if(lapsPerMile > 0) {
+            lapsPerMileInput.text = "\(lapsPerMile)"
+        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -26,9 +30,35 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var lapsPerMileInput: UITextField!
     @IBOutlet weak var lapsPerMileView: UIView!
     
-    
     @IBAction func lapsPerMileEditingFinished(_ sender: AnyObject) {
-        let lapsPerMileInt = Int(lapsPerMileInput.text!)
-        globalPrefs.set(lapsPerMileInt!, forKey: "lapsPerMile")
+        saveLapsPerMile();
+    }
+    
+    func saveLapsPerMile() {
+        let lapsPerMileInt:Int? = Int(lapsPerMileInput.text!)
+        globalPrefs.set(lapsPerMileInt, forKey: "lapsPerMile")
+        self.view.endEditing(true)
+    }
+    
+    func addDoneButtonOnKeyboard(input: UITextField) {
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        doneToolbar.barStyle = UIBarStyle.default
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(SettingsViewController.saveLapsPerMile))
+        
+        var items = [UIBarButtonItem]()
+        items.append(flexSpace)
+        items.append(done)
+        
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        input.inputAccessoryView = doneToolbar
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }
