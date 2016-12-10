@@ -314,8 +314,11 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         if(chunkSize > 0) {
             let lapsByMile = lapTimes.chunk(chunkSize: chunkSize)
             
+            // looks like last is incorrect. the new lap times are inserted at the start of the array
             if(lapsByMile.last?.count == chunkSize) {
-                notifyMileTime(_lapTimes: lapsByMile.last as! [(text: String, time: Double)], mileNumber: lapsByMile.count)
+                print("LAPS BY MILE:")
+                print(lapsByMile.first)
+                notifyMileTime(_lapTimes: lapsByMile.first as! [(text: String, time: Double)], mileNumber: lapsByMile.count)
             }
         }
     }

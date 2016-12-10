@@ -17,6 +17,10 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         
         self.view.backgroundColor = Constants.colorPalette["gray"]
         addDoneButtonOnKeyboard(input: self.lapsPerMileInput)
+        
+        let mileNotifications = globalPrefs.bool(forKey: "playMileNotifications")
+        mileNotificationsToggle.setOn(mileNotifications, animated: false)
+        
         let lapsPerMile = globalPrefs.integer(forKey: "lapsPerMile")
         if(lapsPerMile > 0) {
             lapsPerMileInput.text = "\(lapsPerMile)"
@@ -27,17 +31,27 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         return .lightContent
     }
     
+    
     @IBOutlet weak var lapsPerMileInput: UITextField!
     @IBOutlet weak var lapsPerMileView: UIView!
+    @IBOutlet weak var mileNotificationsToggle: UISwitch!
     
     @IBAction func lapsPerMileEditingFinished(_ sender: AnyObject) {
         saveLapsPerMile();
+    }
+    
+    @IBAction func mileNotificationsToggled(_ sender: UISwitch) {
+        saveMileNotifications()
     }
     
     func saveLapsPerMile() {
         let lapsPerMileInt:Int? = Int(lapsPerMileInput.text!)
         globalPrefs.set(lapsPerMileInt, forKey: "lapsPerMile")
         self.view.endEditing(true)
+    }
+    
+    func saveMileNotifications() {
+        globalPrefs.set(mileNotificationsToggle.isOn, forKey: "playMileNotifications")
     }
     
     func addDoneButtonOnKeyboard(input: UITextField) {

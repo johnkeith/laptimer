@@ -262,7 +262,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Laps Per Mile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9i-d6-pvu">
                                         <frame key="frameInset" minX="20" minY="61" width="125" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -275,14 +275,30 @@
                                             <action selector="lapsPerMileEditingFinished:" destination="O0y-Ya-fVz" eventType="primaryActionTriggered" id="kX8-sY-T4m"/>
                                         </connections>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Mile Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udm-SX-u93">
+                                        <frame key="frameInset" minX="20" minY="8" width="125" height="21"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8q2-dX-ZY4">
+                                        <frame key="frameInset" minX="281" minY="3" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="mileNotificationsToggled:" destination="O0y-Ya-fVz" eventType="touchUpInside" id="mJ5-ck-DgS"/>
+                                        </connections>
+                                    </switch>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="8q2-dX-ZY4" secondAttribute="trailing" id="5le-Jb-Cxr"/>
+                                    <constraint firstItem="w9i-d6-pvu" firstAttribute="top" secondItem="udm-SX-u93" secondAttribute="bottom" constant="8" id="Etf-LX-PZp"/>
                                     <constraint firstItem="w9i-d6-pvu" firstAttribute="leading" secondItem="7Sa-S9-nt4" secondAttribute="leading" id="F8Z-Sp-gQ7"/>
-                                    <constraint firstItem="w9i-d6-pvu" firstAttribute="top" secondItem="7Sa-S9-nt4" secondAttribute="top" id="JBV-5H-eA4"/>
+                                    <constraint firstItem="8q2-dX-ZY4" firstAttribute="top" secondItem="7Sa-S9-nt4" secondAttribute="top" id="J0K-Wu-SZL"/>
                                     <constraint firstItem="w9i-d6-pvu" firstAttribute="width" secondItem="7Sa-S9-nt4" secondAttribute="width" multiplier="0.5" id="QGv-ls-YHE"/>
                                     <constraint firstItem="gak-zb-CiW" firstAttribute="width" secondItem="7Sa-S9-nt4" secondAttribute="width" multiplier="0.4" id="Ryz-Co-727"/>
-                                    <constraint firstItem="gak-zb-CiW" firstAttribute="top" secondItem="7Sa-S9-nt4" secondAttribute="top" id="RzB-qw-Hth"/>
+                                    <constraint firstItem="gak-zb-CiW" firstAttribute="top" secondItem="8q2-dX-ZY4" secondAttribute="bottom" constant="8" id="UVz-b1-vc0"/>
+                                    <constraint firstItem="udm-SX-u93" firstAttribute="top" secondItem="7Sa-S9-nt4" secondAttribute="top" id="jGM-Zs-uHG"/>
                                     <constraint firstAttribute="trailing" secondItem="gak-zb-CiW" secondAttribute="trailing" id="ki4-lq-eKr"/>
+                                    <constraint firstItem="udm-SX-u93" firstAttribute="leading" secondItem="7Sa-S9-nt4" secondAttribute="leading" id="tKG-QO-5mk"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -304,6 +320,7 @@
                     <connections>
                         <outlet property="lapsPerMileInput" destination="gak-zb-CiW" id="BTQ-Ep-K0y"/>
                         <outlet property="lapsPerMileView" destination="7Sa-S9-nt4" id="mub-GX-PHF"/>
+                        <outlet property="mileNotificationsToggle" destination="8q2-dX-ZY4" id="Nnr-55-Odt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="we6-ys-tSw" userLabel="First Responder" sceneMemberID="firstResponder"/>
