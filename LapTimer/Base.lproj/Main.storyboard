@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -41,7 +44,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtw-cd-kdx">
-                                <frame key="frameInset" minX="87" minY="209" width="200.5" height="201"/>
+                                <rect key="frame" x="87" y="209" width="200.5" height="201"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qtw-cd-kdx" secondAttribute="height" multiplier="1:1" id="m5C-BK-jWR"/>
                                 </constraints>
@@ -55,7 +58,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mU7-R0-Prj">
-                                <frame key="frameInset" minY="593" width="375" height="54"/>
+                                <rect key="frame" x="0.0" y="593" width="375" height="54"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
                                 <state key="normal" title="Settings">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -65,17 +68,17 @@
                                 </connections>
                             </button>
                             <view hidden="YES" opaque="NO" contentMode="top" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Zz-tb-bjB" userLabel="Total Time View" colorLabel="IBBuiltInLabel-Red">
-                                <frame key="frameInset" minX="20" minY="20" width="334" height="152"/>
+                                <rect key="frame" x="20" y="20" width="334" height="152"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Run Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPH-yd-baX">
-                                        <frame key="frameInset" minY="46" width="334" height="61"/>
+                                        <rect key="frame" x="0.0" y="46" width="334" height="61"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="46"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Total Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMK-sr-7dz">
-                                        <frame key="frameInset" width="141" height="45"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="141" height="45"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -88,17 +91,17 @@
                                 </constraints>
                             </view>
                             <view hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lgR-4f-dIZ" userLabel="Lap Time View" colorLabel="IBBuiltInLabel-Orange">
-                                <frame key="frameInset" minX="20" minY="180" width="334" height="152"/>
+                                <rect key="frame" x="20" y="180" width="334" height="152"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lap Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmj-Cm-bNm">
-                                        <frame key="frameInset" minY="36" width="334" height="80"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="46"/>
+                                        <rect key="frame" x="0.0" y="36" width="334" height="80"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="58"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lap Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kww-ZY-wDd">
-                                        <frame key="frameInset" width="132" height="40"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="132" height="40"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="34"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -111,11 +114,11 @@
                                 </constraints>
                             </view>
                             <view hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aJY-te-XDc" userLabel="Lap/Restart View" colorLabel="IBBuiltInLabel-Yellow">
-                                <frame key="frameInset" minX="20" minY="340" width="334" height="154"/>
+                                <rect key="frame" x="20" y="340" width="334" height="154"/>
                                 <subviews>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJh-fQ-2nc">
-                                        <frame key="frameInset" minX="0.045199999999999997" minY="0.51850000000000007" width="157" height="100"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="46"/>
+                                        <rect key="frame" x="0.045200000000001239" y="0.51850000000001728" width="157" height="100"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="58"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Restart">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -125,8 +128,8 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZK-YU-zeS">
-                                        <frame key="frameInset" minX="0.8286" minY="0.51850000000000007" width="159" height="100"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="46"/>
+                                        <rect key="frame" x="0.82860000000000156" y="0.51850000000001728" width="159" height="100"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="58"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Lap">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -148,11 +151,11 @@
                                 </constraints>
                             </view>
                             <view hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uhr-xv-oGD" userLabel="Pause/Reset View">
-                                <frame key="frameInset" minX="20" minY="502" width="334" height="145"/>
+                                <rect key="frame" x="20" y="502" width="334" height="145"/>
                                 <subviews>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nH-hY-zwO">
-                                        <frame key="frameInset" minX="160" minY="37" width="166" height="71"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="46"/>
+                                        <rect key="frame" x="160" y="37" width="166" height="71"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="58"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Pause">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -162,8 +165,8 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIQ-Xs-Dbt">
-                                        <frame key="frameInset" minX="0.046800000000000001" minY="0.4889" width="163" height="100"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="46"/>
+                                        <rect key="frame" x="0.046800000000001063" y="0.48890000000005784" width="163" height="100"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="58"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Clear">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -187,31 +190,40 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Uhr-xv-oGD" firstAttribute="top" secondItem="aJY-te-XDc" secondAttribute="bottom" constant="16" id="0bf-Xp-VAC"/>
-                            <constraint firstItem="aJY-te-XDc" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="5JL-ha-x00"/>
-                            <constraint firstItem="lgR-4f-dIZ" firstAttribute="top" secondItem="1Zz-tb-bjB" secondAttribute="bottom" constant="8" id="7u6-C7-KKl"/>
+                            <constraint firstItem="Uhr-xv-oGD" firstAttribute="top" secondItem="aJY-te-XDc" secondAttribute="bottom" id="0bf-Xp-VAC"/>
+                            <constraint firstItem="aJY-te-XDc" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1/3" id="5JL-ha-x00"/>
+                            <constraint firstItem="lgR-4f-dIZ" firstAttribute="top" secondItem="1Zz-tb-bjB" secondAttribute="bottom" constant="8" id="7u6-C7-KKl" userLabel="DISABLED -Lap Time View.top = Total Time View.bottom + 8"/>
                             <constraint firstItem="1Zz-tb-bjB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Av8-Mq-Yi9"/>
-                            <constraint firstItem="lgR-4f-dIZ" firstAttribute="width" secondItem="aJY-te-XDc" secondAttribute="width" id="EUh-vj-BmX"/>
                             <constraint firstItem="lgR-4f-dIZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="FtK-gI-ZB4"/>
                             <constraint firstItem="qtw-cd-kdx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GML-5X-4Ft"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lgR-4f-dIZ" secondAttribute="trailing" id="HfP-KD-7ty"/>
-                            <constraint firstItem="aJY-te-XDc" firstAttribute="height" secondItem="Uhr-xv-oGD" secondAttribute="height" id="J38-D8-Ppc"/>
+                            <constraint firstItem="aJY-te-XDc" firstAttribute="height" secondItem="Uhr-xv-oGD" secondAttribute="height" id="J38-D8-Ppc" userLabel="DISABLED - Lap/Restart View.height = Pause/Reset View.height"/>
+                            <constraint firstItem="lgR-4f-dIZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="JO8-mK-ZN8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Uhr-xv-oGD" secondAttribute="bottom" id="OZf-jZ-6Kl"/>
                             <constraint firstItem="1Zz-tb-bjB" firstAttribute="width" secondItem="lgR-4f-dIZ" secondAttribute="width" id="Qde-pW-0qQ"/>
-                            <constraint firstItem="aJY-te-XDc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="XIt-n0-rtT"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aJY-te-XDc" secondAttribute="trailing" id="YFt-k4-6nn"/>
+                            <constraint firstItem="aJY-te-XDc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XIt-n0-rtT"/>
+                            <constraint firstItem="aJY-te-XDc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="YFt-k4-6nn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1Zz-tb-bjB" secondAttribute="trailing" id="cTp-uf-GJ8"/>
                             <constraint firstItem="1Zz-tb-bjB" firstAttribute="height" secondItem="lgR-4f-dIZ" secondAttribute="height" id="dco-zY-Go1"/>
                             <constraint firstItem="aJY-te-XDc" firstAttribute="width" secondItem="Uhr-xv-oGD" secondAttribute="width" id="eBO-9f-4xX"/>
-                            <constraint firstItem="Uhr-xv-oGD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gRE-RG-4DY"/>
+                            <constraint firstItem="Uhr-xv-oGD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gRE-RG-4DY"/>
                             <constraint firstItem="mU7-R0-Prj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="icX-oj-neD"/>
+                            <constraint firstItem="aJY-te-XDc" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="iv0-Ov-UBO"/>
                             <constraint firstItem="qtw-cd-kdx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pph-5l-F8T"/>
                             <constraint firstItem="1Zz-tb-bjB" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" constant="-32" id="pug-Eb-zyr"/>
-                            <constraint firstItem="1Zz-tb-bjB" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" constant="-10" id="sCz-He-sAo"/>
+                            <constraint firstItem="1Zz-tb-bjB" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1/3" constant="-10" id="sCz-He-sAo"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mU7-R0-Prj" secondAttribute="bottom" constant="20" id="tEN-9H-U6x"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Uhr-xv-oGD" secondAttribute="trailing" id="wXb-9y-GqV"/>
+                            <constraint firstItem="Uhr-xv-oGD" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="wXb-9y-GqV"/>
                             <constraint firstItem="aJY-te-XDc" firstAttribute="top" secondItem="lgR-4f-dIZ" secondAttribute="bottom" constant="8" id="x6f-VA-s11"/>
                             <constraint firstItem="1Zz-tb-bjB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="yLA-iQ-iCT"/>
+                            <constraint firstItem="Uhr-xv-oGD" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1/3" id="zOU-7l-RLM"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7u6-C7-KKl"/>
+                                <exclude reference="J38-D8-Ppc"/>
+                            </mask>
+                        </variation>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" title="Timer" id="ETJ-KB-zij"/>
@@ -248,7 +260,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f92-x1-s6r">
-                                <frame key="frameInset" minX="16" minY="20" width="88" height="47"/>
+                                <rect key="frame" x="16" y="20" width="88" height="47"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                 <state key="normal" title="← Back">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -258,16 +270,16 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Sa-S9-nt4" userLabel="Number of Laps Per Mile View">
-                                <frame key="frameInset" minX="16" minY="59" width="343" height="143"/>
+                                <rect key="frame" x="16" y="59" width="343" height="143"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Laps Per Mile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9i-d6-pvu">
-                                        <frame key="frameInset" minX="20" minY="61" width="125" height="21"/>
+                                        <rect key="frame" x="20" y="61" width="125" height="21"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="None" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gak-zb-CiW">
-                                        <frame key="frameInset" minX="164" minY="61" width="171" height="30"/>
+                                        <rect key="frame" x="164" y="61" width="171" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
@@ -276,13 +288,13 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Mile Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udm-SX-u93">
-                                        <frame key="frameInset" minX="20" minY="8" width="125" height="21"/>
+                                        <rect key="frame" x="20" y="8" width="125" height="21"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8q2-dX-ZY4">
-                                        <frame key="frameInset" minX="281" minY="3" width="51" height="31"/>
+                                        <rect key="frame" x="281" y="3" width="51" height="31"/>
                                         <connections>
                                             <action selector="mileNotificationsToggled:" destination="O0y-Ya-fVz" eventType="touchUpInside" id="mJ5-ck-DgS"/>
                                         </connections>

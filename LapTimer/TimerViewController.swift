@@ -35,19 +35,24 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         
         self.view.backgroundColor = Constants.colorPalette["gray"]
         
-        setBordersForView(targetView: lapRestartView)
-        setBordersForView(targetView: pauseResetView)
-        setBordersForView(targetView: lapButton)
-        setBordersForView(targetView: restartButton)
-        setBordersForView(targetView: resetButton)
-        setBordersForView(targetView: pauseButton)
+//        setBordersForView(targetView: lapRestartView)
+//        setBordersForView(targetView: pauseResetView)
+//        setBordersForView(targetView: lapButton)
+//        setBordersForView(targetView: restartButton)
+//        setBordersForView(targetView: resetButton)
+//        setBordersForView(targetView: pauseButton)
         setButtonColors()
         setDropShadowForView(targetView: lapRestartView)
         setDropShadowForView(targetView: pauseResetView)
         
-        let lapButtonFont = UIFont.monospacedDigitSystemFont(ofSize: 48, weight: UIFontWeightLight)
-        lapTimerDisplay.font = lapButtonFont
-        timerCounterDisplay.font = lapButtonFont
+        let lapButtonFont = UIFont.systemFont(ofSize: 68, weight: UIFontWeightLight)
+        let timerDisplayFont = UIFont.monospacedDigitSystemFont(ofSize: 68, weight: UIFontWeightLight)
+        lapTimerDisplay.font = timerDisplayFont
+        timerCounterDisplay.font = timerDisplayFont
+        lapButton.titleLabel?.font = lapButtonFont
+        pauseButton.titleLabel?.font = lapButtonFont
+        restartButton.titleLabel?.font = lapButtonFont
+        resetButton.titleLabel?.font = lapButtonFont
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,10 +74,10 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     }
     
     func setButtonColors() {
-        lapButton.backgroundColor = Constants.colorPalette["dark-blue"]
+        lapButton.backgroundColor = Constants.colorPalette["light-orange"]
+        pauseButton.backgroundColor = Constants.colorPalette["black"]
         restartButton.backgroundColor = Constants.colorPalette["blue-background"]
         resetButton.backgroundColor = Constants.colorPalette["gray"]
-        pauseButton.backgroundColor = Constants.colorPalette["light-orange"]
     }
 
     @IBOutlet weak var lapTimerLabel: UILabel!
@@ -106,7 +111,7 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         
         startButton.isHidden = true
         
-        totalTimeView.isHidden = false
+//        totalTimeView.isHidden = false
         lapTimeView.isHidden = false
         lapRestartView.isHidden = false
         pauseResetView.isHidden = false
