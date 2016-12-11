@@ -19,6 +19,7 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     var startTime = NSDate.timeIntervalSinceReferenceDate
     var startLapTime = NSDate.timeIntervalSinceReferenceDate
     var lapTimes = [(text: String, time: Double)]()
+    var timeDisplayed = "lap"
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -53,11 +54,39 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         pauseButton.titleLabel?.font = lapButtonFont
         restartButton.titleLabel?.font = lapButtonFont
         resetButton.titleLabel?.font = lapButtonFont
+        
+        view.addSubview(lapTimeView)
+        view.addSubview(totalTimeView)
+        
+        let lapTimeTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.timeTapped(sender:)))
+        lapTimeTapRecognizer.numberOfTapsRequired = 1
+
+        let totalTimeTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.timeTapped(sender:)))
+        totalTimeTapRecognizer.numberOfTapsRequired = 1
+//        view.addGestureRecognizer(timeTapRecognizer)
+        
+        lapTimeView.addGestureRecognizer(lapTimeTapRecognizer)
+        lapTimeView.isUserInteractionEnabled = true
+
+        totalTimeView.addGestureRecognizer(totalTimeTapRecognizer)
+        totalTimeView.isUserInteractionEnabled = true
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func timeTapped(sender: UITapGestureRecognizer? = nil) {
+        if(timeDisplayed == "lap") {
+            timeDisplayed = "total"
+        } else if(timeDisplayed == "total") {
+            timeDisplayed = "lap"
+        }
+        print(timeDisplayed)
+        print(sender?.view)
+        print("Here is the lapTimerVIew")
+        print(lapTimeView)
     }
     
     func setDropShadowForView(targetView: UIView) {
