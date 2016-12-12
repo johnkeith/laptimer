@@ -67,18 +67,18 @@
                                     <segue destination="O0y-Ya-fVz" kind="show" id="86z-4w-WzP"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" opaque="NO" contentMode="top" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Zz-tb-bjB" userLabel="Total Time View" colorLabel="IBBuiltInLabel-Red">
+                            <view opaque="NO" contentMode="top" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Zz-tb-bjB" userLabel="Total Time View" colorLabel="IBBuiltInLabel-Red">
                                 <rect key="frame" x="20" y="20" width="334" height="152"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Run Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPH-yd-baX">
                                         <rect key="frame" x="0.0" y="46" width="334" height="61"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="46"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="58"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Total Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMK-sr-7dz">
                                         <rect key="frame" x="0.0" y="0.0" width="141" height="45"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="34"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -87,10 +87,10 @@
                                     <constraint firstItem="DPH-yd-baX" firstAttribute="centerY" secondItem="1Zz-tb-bjB" secondAttribute="centerY" id="0Oi-Td-f7E"/>
                                     <constraint firstItem="DPH-yd-baX" firstAttribute="centerX" secondItem="1Zz-tb-bjB" secondAttribute="centerX" id="4wV-Wp-MyI"/>
                                     <constraint firstItem="YMK-sr-7dz" firstAttribute="leading" secondItem="1Zz-tb-bjB" secondAttribute="leading" constant="8" id="5YC-jx-yz9"/>
-                                    <constraint firstItem="YMK-sr-7dz" firstAttribute="top" secondItem="1Zz-tb-bjB" secondAttribute="top" constant="8" id="8GR-wO-0x6"/>
+                                    <constraint firstItem="DPH-yd-baX" firstAttribute="top" secondItem="YMK-sr-7dz" secondAttribute="bottom" id="vZF-uB-Oqe"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lgR-4f-dIZ" userLabel="Lap Time View" colorLabel="IBBuiltInLabel-Orange">
+                            <view opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lgR-4f-dIZ" userLabel="Lap Time View" colorLabel="IBBuiltInLabel-Orange">
                                 <rect key="frame" x="20" y="180" width="334" height="152"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lap Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmj-Cm-bNm">
@@ -107,7 +107,7 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="kww-ZY-wDd" firstAttribute="top" secondItem="lgR-4f-dIZ" secondAttribute="top" constant="8" id="CnG-ly-cq0"/>
+                                    <constraint firstItem="mmj-Cm-bNm" firstAttribute="top" secondItem="kww-ZY-wDd" secondAttribute="bottom" id="8uo-cV-1q9"/>
                                     <constraint firstItem="mmj-Cm-bNm" firstAttribute="centerY" secondItem="lgR-4f-dIZ" secondAttribute="centerY" id="M48-JZ-yGy"/>
                                     <constraint firstItem="kww-ZY-wDd" firstAttribute="leading" secondItem="lgR-4f-dIZ" secondAttribute="leading" constant="8" id="Shn-DD-sLK"/>
                                     <constraint firstItem="mmj-Cm-bNm" firstAttribute="centerX" secondItem="lgR-4f-dIZ" secondAttribute="centerX" id="eFq-pv-gtg"/>
@@ -215,7 +215,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mU7-R0-Prj" secondAttribute="bottom" constant="20" id="tEN-9H-U6x"/>
                             <constraint firstItem="Uhr-xv-oGD" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="wXb-9y-GqV"/>
                             <constraint firstItem="aJY-te-XDc" firstAttribute="top" secondItem="lgR-4f-dIZ" secondAttribute="bottom" constant="8" id="x6f-VA-s11"/>
-                            <constraint firstItem="1Zz-tb-bjB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="yLA-iQ-iCT"/>
+                            <constraint firstItem="1Zz-tb-bjB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="yLA-iQ-iCT"/>
                             <constraint firstItem="Uhr-xv-oGD" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1/3" id="zOU-7l-RLM"/>
                         </constraints>
                         <variation key="default">

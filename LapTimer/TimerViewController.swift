@@ -36,12 +36,6 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         
         self.view.backgroundColor = Constants.colorPalette["gray"]
         
-//        setBordersForView(targetView: lapRestartView)
-//        setBordersForView(targetView: pauseResetView)
-//        setBordersForView(targetView: lapButton)
-//        setBordersForView(targetView: restartButton)
-//        setBordersForView(targetView: resetButton)
-//        setBordersForView(targetView: pauseButton)
         setButtonColors()
         setDropShadowForView(targetView: lapRestartView)
         setDropShadowForView(targetView: pauseResetView)
@@ -58,18 +52,20 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         view.addSubview(lapTimeView)
         view.addSubview(totalTimeView)
         
-        let lapTimeTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.timeTapped(sender:)))
+        let lapTimeTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.timeTapped))
         lapTimeTapRecognizer.numberOfTapsRequired = 1
 
-        let totalTimeTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.timeTapped(sender:)))
+        let totalTimeTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.timeTapped))
         totalTimeTapRecognizer.numberOfTapsRequired = 1
-//        view.addGestureRecognizer(timeTapRecognizer)
         
         lapTimeView.addGestureRecognizer(lapTimeTapRecognizer)
         lapTimeView.isUserInteractionEnabled = true
 
         totalTimeView.addGestureRecognizer(totalTimeTapRecognizer)
         totalTimeView.isUserInteractionEnabled = true
+        
+        totalTimeView.alpha = 0.0
+        lapTimeView.alpha = 0.0
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,16 +73,16 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func timeTapped(sender: UITapGestureRecognizer? = nil) {
+    func timeTapped() {
         if(timeDisplayed == "lap") {
             timeDisplayed = "total"
+            animateFadeOutView(viewToFadeOut: lapTimeView)
+            animateFadeInView(viewToFadeIn: totalTimeView)
         } else if(timeDisplayed == "total") {
             timeDisplayed = "lap"
+            animateFadeOutView(viewToFadeOut: totalTimeView)
+            animateFadeInView(viewToFadeIn: lapTimeView)
         }
-        print(timeDisplayed)
-        print(sender?.view)
-        print("Here is the lapTimerVIew")
-        print(lapTimeView)
     }
     
     func setDropShadowForView(targetView: UIView) {
@@ -140,8 +136,11 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         
         startButton.isHidden = true
         
-//        totalTimeView.isHidden = false
-        lapTimeView.isHidden = false
+        totalTimeView.alpha = 0.0
+        lapTimeView.alpha = 0.0
+
+        animateFadeInView(viewToFadeIn: lapTimeView)
+        
         lapRestartView.isHidden = false
         pauseResetView.isHidden = false
         
@@ -149,16 +148,6 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         pauseButton.isHidden = false
         print("start hit")
     }
-    
-//    func clearStartButtonTitle() {
-//        startButton.setTitle("", for: .normal)
-//    }
-//    
-//    func animateStartButtonTransition() {
-//        UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions.allowUserInteraction, animations: { () -> Void in
-//            self.startButton.backgroundColor = UIColor.white;
-//        })
-//    }
     
     @IBAction func pauseTimer(_ sender: AnyObject) {
         animateBackgroundColorChange(targetView: self.view, color: Constants.colorPalette["black"]!)
@@ -185,8 +174,8 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         resetButton.isHidden = true
         startButton.isHidden = false
         
-        totalTimeView.isHidden = true
-        lapTimeView.isHidden = true
+        totalTimeView.alpha = 0.0
+        lapTimeView.alpha = 0.0
         lapRestartView.isHidden = true
         pauseResetView.isHidden = true
         
@@ -431,6 +420,17 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
             targetView.backgroundColor = color;
         })
     }
-
+    
+    func animateFadeInView(viewToFadeIn: UIView) {
+        UIView.animate(withDuration: 0.2, animations: {
+            viewToFadeIn.alpha = 1.0
+        })
+    }
+    
+    func animateFadeOutView(viewToFadeOut: UIView) {
+        UIView.animate(withDuration: 0.3, animations: {
+            viewToFadeOut.alpha = 0.0
+        })
+    }
 }
 
