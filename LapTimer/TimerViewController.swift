@@ -37,8 +37,6 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         self.view.backgroundColor = Constants.colorPalette["gray"]
         
         setButtonColors()
-        setDropShadowForView(targetView: lapRestartView)
-        setDropShadowForView(targetView: pauseResetView)
         
         let lapButtonFont = UIFont.systemFont(ofSize: 68, weight: UIFontWeightLight)
         let timerDisplayFont = UIFont.monospacedDigitSystemFont(ofSize: 68, weight: UIFontWeightLight)
@@ -51,6 +49,8 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
         
         view.addSubview(lapTimeView)
         view.addSubview(totalTimeView)
+        view.addSubview(lapRestartView)
+        view.addSubview(pauseResetView)
         
         let lapTimeTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.timeTapped))
         lapTimeTapRecognizer.numberOfTapsRequired = 1
@@ -86,7 +86,7 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     }
     
     func setDropShadowForView(targetView: UIView) {
-        targetView.layer.shadowColor = Constants.colorPalette["shadow-gray"]?.cgColor
+        targetView.layer.shadowColor = Constants.colorPalette["white"]?.cgColor
         targetView.layer.shadowOffset = CGSize(width: 0, height: 5)
         targetView.layer.shadowOpacity = 0.4
         targetView.layer.shadowRadius = 5.0
@@ -152,6 +152,8 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     @IBAction func pauseTimer(_ sender: AnyObject) {
         animateBackgroundColorChange(targetView: self.view, color: Constants.colorPalette["black"]!)
         timer.invalidate()
+        
+        textToSpeech(text: "Paused")
         
         restartButton.isHidden = false
         resetButton.isHidden = false
@@ -422,7 +424,7 @@ class TimerViewController: UIViewController, AVSpeechSynthesizerDelegate {
     }
     
     func animateFadeInView(viewToFadeIn: UIView) {
-        UIView.animate(withDuration: 0.2, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             viewToFadeIn.alpha = 1.0
         })
     }
